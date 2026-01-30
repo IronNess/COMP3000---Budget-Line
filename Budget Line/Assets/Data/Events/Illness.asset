@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Illness
+  m_EditorClassIdentifier: Assembly-CSharp::EventData
+  title: Illness
+  description: You wake up feeling unwell. If you ignore it, your energy and stress
+    may spiral. Do you pay for medicine or try to push through?
+  choices:
+  - label: "Buy Medicine (\xA315)"
+    moneyDelta: -15
+    energyDelta: 5
+    stressDelta: -5
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 1
+  - label: Rest At Home
+    moneyDelta: 0
+    energyDelta: 15
+    stressDelta: -5
+    hungerDelta: -5
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 2
+  - label: 'Ignore it '
+    moneyDelta: 0
+    energyDelta: -15
+    stressDelta: 10
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 1
+    timeBlocksCost: 1
