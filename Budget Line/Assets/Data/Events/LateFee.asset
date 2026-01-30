@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: LateFee
+  m_EditorClassIdentifier: Assembly-CSharp::EventData
+  title: Late Fee Notice
+  description: A bill you delayed has gained a late fee. If you don't pay it soon,
+    it may escalate or affect your situation further.
+  choices:
+  - label: "Pay late fee now (\xA325)"
+    moneyDelta: -25
+    energyDelta: 0
+    stressDelta: -3
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 0
+  - label: "Pay partial (\xA310)"
+    moneyDelta: -10
+    energyDelta: 0
+    stressDelta: 2
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 0
+  - label: Ignore for now
+    moneyDelta: 0
+    energyDelta: 0
+    stressDelta: 8
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 0
