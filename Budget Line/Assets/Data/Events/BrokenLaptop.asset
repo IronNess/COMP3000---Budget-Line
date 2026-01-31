@@ -12,6 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d4f45ec397a1b4bafd39f8e32cf0d3, type: 3}
   m_Name: BrokenLaptop
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  choices: []
+  title: Broken Laptop
+  description: Your laptop stops working. Without it, studying becomes harder.
+  choices:
+  - label: Repair
+    moneyDelta: -120
+    energyDelta: 0
+    stressDelta: -5
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 1
+  - label: Buy cheap replacement
+    moneyDelta: -250
+    energyDelta: 0
+    stressDelta: -8
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 1
+  - label: Borrow money from library
+    moneyDelta: 0
+    energyDelta: 0
+    stressDelta: 8
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: -1
+    timeBlocksCost: 1
