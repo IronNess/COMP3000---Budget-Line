@@ -34,6 +34,7 @@ public class TimeSystem : MonoBehaviour
                 state.ApplyDailyConsequences();
                 goals.CheckDaily(day);
                 events.TryTriggerDailyEvent();
+                FindObjectOfType<StudentFinanceSystem>()?.OnNewDay();
             }
         }
 
