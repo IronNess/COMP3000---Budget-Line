@@ -96,6 +96,13 @@ public class GameState : MonoBehaviour
             stress = 70;
             OnStatsChanged?.Invoke();
         }
+
+        if (hunger < 20)
+        {
+            energy = Mathf.Clamp(energy - 5, 0, 100);
+            OnStatsChanged?.Invoke();
+        }
+
     }
 
     public void ImproveStudyEfficiency()
@@ -109,4 +116,6 @@ public class GameState : MonoBehaviour
         resilience = Mathf.Clamp(resilience - 0.03f, 0.7f, 1f);
         OnStatsChanged?.Invoke();
     }
+
+    public bool laptopBroken = false;
 }
