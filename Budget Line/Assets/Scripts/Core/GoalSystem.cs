@@ -41,4 +41,19 @@ public class GoalSystem : MonoBehaviour
             MissedDeadlineThisWeek = false; 
         }
     }
+
+    public void EndOfWeekSummary()
+{
+    string message = "";
+
+    if (state.energy < 30) message += "You are exhausted.\n";
+    if (state.money < 0) message += "You are in debt.\n";
+    if (MissedDeadlineThisWeek) message += "You fell behind academically.\n";
+
+    FindObjectOfType<EventUI>().ShowCustom(
+        "Weekly Review",
+        message
+    );
+}
+
 }
