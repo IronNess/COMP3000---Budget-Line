@@ -12,6 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d4f45ec397a1b4bafd39f8e32cf0d3, type: 3}
   m_Name: AcademicEquipmentNeeded
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  choices: []
+  title: Academic Equipment Needed
+  description: Printing, lab kit, software subsciption
+  choices:
+  - label: Pay
+    moneyDelta: -35
+    energyDelta: 0
+    stressDelta: -5
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 1
+  - label: Delay
+    moneyDelta: 0
+    energyDelta: 0
+    stressDelta: 7
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: -1
+    timeBlocksCost: 0
+  - label: Ask for help
+    moneyDelta: 0
+    energyDelta: 0
+    stressDelta: -2
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 0
