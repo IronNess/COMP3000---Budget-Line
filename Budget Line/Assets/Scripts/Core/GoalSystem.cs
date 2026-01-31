@@ -6,6 +6,9 @@ public class GoalSystem : MonoBehaviour
     public int tasksRequiredByFriday = 3;
     public int tasksCompletedThisWeek = 0;
 
+    
+    public bool MissedDeadlineThisWeek { get; private set; } = false;
+
     [SerializeField] private GameState state;
 
     private void Awake()
@@ -20,18 +23,22 @@ public class GoalSystem : MonoBehaviour
 
     public void CheckDaily(WeekDay day)
     {
-        // Friday deadline check
+       
         if (day == WeekDay.Fri)
         {
-            if (tasksCompletedThisWeek < tasksRequiredByFriday)
+          
+            MissedDeadlineThisWeek = tasksCompletedThisWeek < tasksRequiredByFriday;
+
+            if (MissedDeadlineThisWeek)
             {
-                // Consequence: stress spike + small grade penalty
+                
                 state.AddStress(+15);
                 state.AddGrades(-1);
             }
 
-            // Reset for next week (simple model)
+          
             tasksCompletedThisWeek = 0;
+            MissedDeadlineThisWeek = false; 
         }
     }
 }
