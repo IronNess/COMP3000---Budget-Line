@@ -65,4 +65,19 @@ public class EventUI : MonoBehaviour
 
         panel.SetActive(false);
     }
+
+    public void ShowCustom(string title, string message)
+{
+    panel.SetActive(true);
+
+    titleText.text = title;
+    bodyText.text = message;
+
+    // Hide choice buttons (informational popup)
+    foreach (var btn in choiceButtons)
+    {
+        btn.gameObject.SetActive(false);
+    }
+}
+
 }
