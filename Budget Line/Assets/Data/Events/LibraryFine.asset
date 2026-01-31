@@ -12,6 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d4f45ec397a1b4bafd39f8e32cf0d3, type: 3}
   m_Name: LibraryFine
   m_EditorClassIdentifier: 
-  title: 
+  title: Library Fine
   description: 
-  choices: []
+  choices:
+  - label: Pay
+    moneyDelta: -10
+    energyDelta: 0
+    stressDelta: -2
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 0
+  - label: Conest it
+    moneyDelta: -10
+    energyDelta: 0
+    stressDelta: 2
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 1
