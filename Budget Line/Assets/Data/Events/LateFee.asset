@@ -9,33 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 95d4f45ec397a1b4bafd39f8e32cf0d3, type: 3}
   m_Name: LateFee
-  m_EditorClassIdentifier: Assembly-CSharp::EventData
-  title: Late Fee Notice
-  description: A bill you delayed has gained a late fee. If you don't pay it soon,
-    it may escalate or affect your situation further.
+  m_EditorClassIdentifier: 
+  title: Late Fee Payment
+  description: You missed a payment deadline. A late fee has been applied to your
+    account.
   choices:
-  - label: "Pay late fee now (\xA325)"
+  - label: Accept
     moneyDelta: -25
     energyDelta: 0
-    stressDelta: -3
-    hungerDelta: 0
-    hygieneDelta: 0
-    gradesDelta: 0
-    timeBlocksCost: 0
-  - label: "Pay partial (\xA310)"
-    moneyDelta: -10
-    energyDelta: 0
-    stressDelta: 2
-    hungerDelta: 0
-    hygieneDelta: 0
-    gradesDelta: 0
-    timeBlocksCost: 0
-  - label: Ignore for now
-    moneyDelta: 0
-    energyDelta: 0
-    stressDelta: 8
+    stressDelta: 5
     hungerDelta: 0
     hygieneDelta: 0
     gradesDelta: 0
