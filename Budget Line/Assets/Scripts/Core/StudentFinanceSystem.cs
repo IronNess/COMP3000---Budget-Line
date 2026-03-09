@@ -15,6 +15,7 @@ public class StudentFinanceSystem : MonoBehaviour
     [Header("How many days count as a 'month' in-game")]
     public int daysPerMonth = 28; // simple 4-week month
 
+    [Header("References")]
     [SerializeField] private GameState state;
     [SerializeField] private TimeSystem timeSystem;
 
@@ -25,20 +26,9 @@ public class StudentFinanceSystem : MonoBehaviour
         if (!state) state = FindObjectOfType<GameState>();
         if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
 
-        
-        ApplyMonthlyCycle(isFirstMonth: true);
+        ApplyMonthlyCycle(true);
     }
 
-    private void Update()
-    {
-        // Detect day changes by tracking weekday wrap 
-        // increment a counter each time TimeSystem wraps to Morning
-    
-    }
-
-    /// <summary>
-    /// Call this once per new day
-    /// </summary>
     public void OnNewDay()
     {
         dayCounter++;
@@ -46,7 +36,7 @@ public class StudentFinanceSystem : MonoBehaviour
         if (dayCounter >= daysPerMonth)
         {
             dayCounter = 0;
-            ApplyMonthlyCycle(isFirstMonth: false);
+            ApplyMonthlyCycle(false);
         }
     }
 
@@ -54,16 +44,10 @@ public class StudentFinanceSystem : MonoBehaviour
     {
         int totalMonthlyCosts = rent + groceries + bills + transport + diningOut + clothingShopping;
 
-        // Income
         state.AddMoney(monthlyLoanIncome);
-
-        // Costs
         state.AddMoney(-totalMonthlyCosts);
-
-        // Stress impact
         state.AddStress(+10);
 
-        
         Debug.Log($"Monthly cycle applied. Income +£{monthlyLoanIncome}, Costs -£{totalMonthlyCosts}.");
     }
 

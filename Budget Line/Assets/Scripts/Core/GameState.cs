@@ -17,10 +17,49 @@ public class GameState : MonoBehaviour
     [Header("Progression Buffs")]
     [Tooltip("Higher = studying costs less energy.")]
     public float studyEfficiency = 1f; // 1..1.5
+
     [Tooltip("Lower = work/uni causes less stress.")]
     public float resilience = 1f;      // 0.7..1
 
     public event Action OnStatsChanged;
+
+    // -----------------------------
+    // GETTERS (for UI scripts)
+    // -----------------------------
+
+    public int GetMoney()
+    {
+        return money;
+    }
+
+    public int GetEnergy()
+    {
+        return energy;
+    }
+
+    public int GetStress()
+    {
+        return stress;
+    }
+
+    public int GetHunger()
+    {
+        return hunger;
+    }
+
+    public int GetHygiene()
+    {
+        return hygiene;
+    }
+
+    public int GetGrades()
+    {
+        return grades;
+    }
+
+    // -----------------------------
+    // STAT MODIFIERS
+    // -----------------------------
 
     public void AddMoney(int amount)
     {
@@ -59,12 +98,11 @@ public class GameState : MonoBehaviour
     }
 
     /// <summary>
-    /// Runs once per day (when time wraps Night->Morning).
-    /// Handles passive decay + soft fail states.
+    /// Runs once per day (when time wraps Night -> Morning)
     /// </summary>
     public void ApplyDailyConsequences()
     {
-        // Passive decay / pressure
+        // Passive decay
         AddHunger(-10);
         AddHygiene(-8);
         AddStress(+5);
@@ -73,37 +111,41 @@ public class GameState : MonoBehaviour
         if (money < 0)
         {
             money -= debtInterestPerDay;
+            OnStatsChanged?.Invoke();
         }
 
-        // Hunger crash (soft fail)
+        // Hunger crash
         if (hunger <= 0)
         {
             AddEnergy(-20);
             AddStress(+15);
         }
 
-        // Hygiene crash (soft fail)
+        // Hygiene crash
         if (hygiene <= 0)
         {
             AddStress(+10);
         }
 
-        // Stress critical → burnout (soft fail)
+        // Burnout
         if (stress >= 100)
         {
-            // forced "rest" effect: you lose energy and still remain stressed
             energy = Mathf.Clamp(energy - 20, 0, 100);
             stress = 70;
             OnStatsChanged?.Invoke();
         }
 
+        // Low hunger penalty
         if (hunger < 20)
         {
             energy = Mathf.Clamp(energy - 5, 0, 100);
             OnStatsChanged?.Invoke();
         }
-
     }
+
+    // -----------------------------
+    // PROGRESSION
+    // -----------------------------
 
     public void ImproveStudyEfficiency()
     {
@@ -116,6 +158,10 @@ public class GameState : MonoBehaviour
         resilience = Mathf.Clamp(resilience - 0.03f, 0.7f, 1f);
         OnStatsChanged?.Invoke();
     }
+
+    // -----------------------------
+    // WORLD FLAGS
+    // -----------------------------
 
     public bool laptopBroken = false;
 }
