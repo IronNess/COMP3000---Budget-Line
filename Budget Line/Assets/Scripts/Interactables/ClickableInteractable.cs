@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider))]
 public class ClickableInteractable : MonoBehaviour
 {
     private IInteractable interactable;

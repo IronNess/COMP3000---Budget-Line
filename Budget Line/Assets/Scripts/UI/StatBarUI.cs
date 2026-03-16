@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-public class StatBarUI : MonoBehaviour
+public class StatNumberUI : MonoBehaviour
 {
     public GameState state;
-    public Image fillImage;
+    public TextMeshProUGUI label;
 
     public enum StatType
     {
@@ -15,40 +15,48 @@ public class StatBarUI : MonoBehaviour
     }
 
     public StatType statType;
+    public string prefix = "";
+    public string suffix = "";
 
-    void Start()
+    private void Start()
     {
         if (!state)
             state = FindObjectOfType<GameState>();
 
-        state.OnStatsChanged += UpdateBar;
+        if (state != null)
+            state.OnStatsChanged += UpdateNumber;
 
-        UpdateBar();
+        UpdateNumber();
     }
 
-    void UpdateBar()
+    private void OnDestroy()
     {
-        float value = 0f;
+        if (state != null)
+            state.OnStatsChanged -= UpdateNumber;
+    }
+
+    private void UpdateNumber()
+    {
+        if (label == null || state == null) return;
+
+        int value = 0;
 
         switch (statType)
         {
             case StatType.Energy:
                 value = state.GetEnergy();
                 break;
-
             case StatType.Hunger:
                 value = state.GetHunger();
                 break;
-
             case StatType.Hygiene:
                 value = state.GetHygiene();
                 break;
-
             case StatType.Stress:
                 value = state.GetStress();
                 break;
         }
 
-        fillImage.fillAmount = value / 100f;
+        label.text = prefix + value.ToString() + suffix;
     }
 }
