@@ -20,26 +20,29 @@ public class TimeSystem : MonoBehaviour
     }
 
     public void AdvanceTime(int blocks)
+{
+    for (int i = 0; i < blocks; i++)
     {
-        for (int i = 0; i < blocks; i++)
+        // every block = passive stat decay
+        state.ApplyTimeBlockDecay();
+
+        timeBlock = NextBlock(timeBlock);
+
+        // wrap to next day
+        if (timeBlock == TimeBlock.Morning)
         {
-            timeBlock = NextBlock(timeBlock);
+            day = NextDay(day);
 
-            // wrap to next day
-            if (timeBlock == TimeBlock.Morning)
-            {
-                day = NextDay(day);
-
-                // daily systems tick
-                state.ApplyDailyConsequences();
-                goals.CheckDaily(day);
-                events.TryTriggerDailyEvent();
-                FindObjectOfType<StudentFinanceSystem>()?.OnNewDay();
-            }
+            // daily systems tick
+            state.ApplyDailyConsequences();
+            goals.CheckDaily(day);
+            events.TryTriggerDailyEvent();
+            FindObjectOfType<StudentFinanceSystem>()?.OnNewDay();
         }
-
-        OnTimeChanged?.Invoke();
     }
+
+    OnTimeChanged?.Invoke();
+}
 
     private TimeBlock NextBlock(TimeBlock current)
     {
