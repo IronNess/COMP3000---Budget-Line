@@ -21,3 +21,11 @@ public class BedInteractable : MonoBehaviour, IInteractable
         timeSystem.AdvanceTime(2);
     }
 }
+
+public class ClickDebug : MonoBehaviour
+{
+    private void OnMouseDown()
+    {
+        Debug.Log("Bed clicked");
+    }
+}
