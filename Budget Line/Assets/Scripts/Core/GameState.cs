@@ -97,6 +97,13 @@ public class GameState : MonoBehaviour
         OnStatsChanged?.Invoke();
     }
 
+    public void ApplyTimeBlockDecay()
+{
+    AddEnergy(-5);
+    AddHunger(-4);
+    AddHygiene(-3);
+}
+
     /// <summary>
     /// Runs once per day (when time wraps Night -> Morning)
     /// </summary>
