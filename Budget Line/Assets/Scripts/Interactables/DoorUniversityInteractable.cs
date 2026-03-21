@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DoorUniversityInteractable : MonoBehaviour, IInteractable
+public class DoorUniversityInteractable : MonoBehaviour
 {
     public string Prompt => "Go to University (+Grades, -Energy, +Stress, time passes)";
 

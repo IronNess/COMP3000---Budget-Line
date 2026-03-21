@@ -309,18 +309,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &30174471
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -607,18 +595,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &52747535
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -765,18 +741,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: CancelInvoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1178,6 +1142,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3024621452840433635, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
   m_PrefabInstance: {fileID: 1893007129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &218964875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218964873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3774363d48210304aa6e1c21bacffd1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FridgeInteractable
+  mealCost: 5
+  hungerGain: 25
+  state: {fileID: 0}
+  timeSystem: {fileID: 0}
 --- !u!65 &218964876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1211,20 +1191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35221a04040fe854e8a9d36ac84fa55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickableInteractable
---- !u!114 &218964879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218964873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a96a637c8909046a5717aa29aa2d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSpecificMenuInteractable
-  menuController: {fileID: 60408701}
-  menuType: 1
 --- !u!1 &273775382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,18 +1542,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &321336190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1617,7 +1571,7 @@ MonoBehaviour:
   energyCost: -15
   stressChange: -3
   timeBlocksCost: 2
-  state: {fileID: 1967961087}
+  state: {fileID: 0}
   timeSystem: {fileID: 0}
 --- !u!65 &365174211
 BoxCollider:
@@ -1882,18 +1836,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &410281478
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1937,7 +1879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 91.4, y: -26.5}
+  m_AnchoredPosition: {x: 93.8, y: -23.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &447238440
@@ -2136,9 +2078,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867914233}
-        m_TargetAssemblyTypeName: TravelMenuUI, Assembly-CSharp
-        m_MethodName: ChooseWork
+      - m_Target: {fileID: 1967961089}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: WorkLong
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2240,18 +2182,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: CancelInvoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2392,18 +2322,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: CancelInvoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2733,7 +2651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -21, y: -0.6}
+  m_AnchoredPosition: {x: -18.65, y: 2.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583219209
@@ -2875,18 +2793,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: Work2Hours
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3134,18 +3040,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &695638974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3238,18 +3132,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: CancelInvoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3360,18 +3242,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &759784357
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3394,7 +3264,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 867914232}
-  - component: {fileID: 867914233}
   m_Layer: 5
   m_Name: TravelMenu
   m_TagString: Untagged
@@ -3427,21 +3296,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -19}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &867914233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867914231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76e83aba8c345e41a90e9ad9529ed2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TravelMenuUI
-  panel: {fileID: 867914231}
-  uni: {fileID: 0}
-  work: {fileID: 0}
 --- !u!1 &916824583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,18 +3381,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: EatQuickMeal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3810,7 +3652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98.5, y: -26.5}
+  m_AnchoredPosition: {x: 100.9, y: -23.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948676810
@@ -4077,6 +3919,8 @@ GameObject:
   m_Component:
   - component: {fileID: 996059763}
   - component: {fileID: 996059767}
+  - component: {fileID: 996059766}
+  - component: {fileID: 996059765}
   - component: {fileID: 996059768}
   - component: {fileID: 996059764}
   m_Layer: 0
@@ -4123,6 +3967,44 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 250, z: 20}
   m_Center: {x: 200, y: 120, z: 410}
+--- !u!114 &996059765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996059762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d50d7392ec24cd4fa9f0aa25ee7bd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorWorkInteractable
+  payPerShift: 45
+  timeBlocksCost: 2
+  energyCost: -25
+  hungerCost: -15
+  hygieneCost: -15
+  stressCost: 8
+  state: {fileID: 1967961087}
+  timeSystem: {fileID: 1967961086}
+  eventManager: {fileID: 2089829544}
+--- !u!114 &996059766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996059762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf66db1f7e8d48049910a7128a9460a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorUniversityInteractable
+  hygieneThreshold: 20
+  lowHygieneStressPenalty: 8
+  state: {fileID: 1967961087}
+  timeSystem: {fileID: 1967961086}
+  events: {fileID: 2089829544}
 --- !u!114 &996059767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4135,7 +4017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7633c1591eeed48909a12f05bce9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorMenuInteractable
-  travelMenu: {fileID: 867914233}
+  travelMenu: {fileID: 0}
 --- !u!114 &996059768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4174,7 +4056,7 @@ Transform:
   m_GameObject: {fileID: 1011514274}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: 243, z: 0}
+  m_LocalPosition: {x: -29, y: 207, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4339,18 +4221,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1012629710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4469,7 +4339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 104.799995, y: -26.3}
+  m_AnchoredPosition: {x: 107.2, y: -23.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083833720
@@ -4816,18 +4686,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1154344184
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4871,7 +4729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102.1, y: -26.5}
+  m_AnchoredPosition: {x: 104.5, y: -23.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173917548
@@ -5061,26 +4919,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &1197631696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1197631690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a96a637c8909046a5717aa29aa2d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSpecificMenuInteractable
-  menuController: {fileID: 60408701}
-  menuType: 1
 --- !u!1 &1201369155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3776150470411323264, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
   m_PrefabInstance: {fileID: 1893007129}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1201369161
+--- !u!114 &1201369157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5089,44 +4933,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201369155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a96a637c8909046a5717aa29aa2d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e518806bd0c944a488542955b46a94b2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSpecificMenuInteractable
-  menuController: {fileID: 60408701}
-  menuType: 3
---- !u!114 &1201369162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1201369155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35221a04040fe854e8a9d36ac84fa55f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ClickableInteractable
---- !u!65 &1201369163
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1201369155}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.99999994, y: 0.01848888, z: 1.0379066}
-  m_Center: {x: -0.0000000442349, y: 0.5488329, z: 0.47569317}
+  m_EditorClassIdentifier: Assembly-CSharp::DeskInteractable
+  choiceUI: {fileID: 0}
+  minEnergyToStudy: 15
+  lowHungerThreshold: 20
+  lowHygieneThreshold: 20
+  state: {fileID: 0}
+  timeSystem: {fileID: 0}
+  goals: {fileID: 0}
+  events: {fileID: 0}
 --- !u!1 &1252560173
 GameObject:
   m_ObjectHideFlags: 0
@@ -5209,9 +5026,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867914233}
-        m_TargetAssemblyTypeName: TravelMenuUI, Assembly-CSharp
-        m_MethodName: ChooseDowntown
+      - m_Target: {fileID: 1967961089}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: GoDowntown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5453,9 +5270,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867914233}
-        m_TargetAssemblyTypeName: TravelMenuUI, Assembly-CSharp
-        m_MethodName: ChooseUniversity
+      - m_Target: {fileID: 1967961089}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: GoToUniversity
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5926,18 +5743,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1551571338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6048,7 +5853,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95, y: -26.5}
+  m_AnchoredPosition: {x: 97.4, y: -23.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634337658
@@ -6261,18 +6066,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1724903479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6286,6 +6079,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4255186633505938192, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
   m_PrefabInstance: {fileID: 1893007129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1737028127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737028125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695e6ee8e187c854e81e6b276ad0e11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SinkInteractable
+  state: {fileID: 0}
+  timeSystem: {fileID: 0}
 --- !u!65 &1737028128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6319,20 +6126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35221a04040fe854e8a9d36ac84fa55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickableInteractable
---- !u!114 &1737028131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737028125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a96a637c8909046a5717aa29aa2d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSpecificMenuInteractable
-  menuController: {fileID: 60408701}
-  menuType: 2
 --- !u!1 &1770401077
 GameObject:
   m_ObjectHideFlags: 0
@@ -6417,18 +6210,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: CancelInvoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6731,7 +6512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94bb5167042ad8240b49cab4d3698a04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 519
+      value: 501
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94bb5167042ad8240b49cab4d3698a04, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6739,7 +6520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94bb5167042ad8240b49cab4d3698a04, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -271
+      value: -281
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94bb5167042ad8240b49cab4d3698a04, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7191,13 +6972,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 603537476968538688, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1899399273}
+    - targetCorrespondingSourceObject: {fileID: 603537476968538688, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1899399274}
     - targetCorrespondingSourceObject: {fileID: 603537476968538688, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1899399275}
-    - targetCorrespondingSourceObject: {fileID: 603537476968538688, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1899399277}
     - targetCorrespondingSourceObject: {fileID: 2191750151954457832, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 365174210}
@@ -7212,46 +6993,53 @@ PrefabInstance:
       addedObject: {fileID: 23146998}
     - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 218964875}
+    - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 218964876}
     - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 218964877}
-    - targetCorrespondingSourceObject: {fileID: 3024621452840433635, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 218964879}
     - targetCorrespondingSourceObject: {fileID: 3776150470411323264, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1201369161}
-    - targetCorrespondingSourceObject: {fileID: 3776150470411323264, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
+      addedObject: {fileID: 1201369157}
+    - targetCorrespondingSourceObject: {fileID: 4255186633505938192, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1201369163}
-    - targetCorrespondingSourceObject: {fileID: 3776150470411323264, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1201369162}
+      addedObject: {fileID: 1737028127}
     - targetCorrespondingSourceObject: {fileID: 4255186633505938192, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1737028128}
     - targetCorrespondingSourceObject: {fileID: 4255186633505938192, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1737028129}
-    - targetCorrespondingSourceObject: {fileID: 4255186633505938192, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -8928595968697309420, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1737028131}
+      addedObject: {fileID: 2084994101}
     - targetCorrespondingSourceObject: {fileID: -8928595968697309420, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2084994102}
     - targetCorrespondingSourceObject: {fileID: -8928595968697309420, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2084994103}
-    - targetCorrespondingSourceObject: {fileID: -8928595968697309420, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2084994105}
   m_SourcePrefab: {fileID: 100100000, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
 --- !u!1 &1899399270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 603537476968538688, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
   m_PrefabInstance: {fileID: 1893007129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1899399273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899399270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2b2a510b5c0744b80657382afbfe6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LaundryInteractable
+  choiceUI: {fileID: 0}
 --- !u!65 &1899399274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7285,20 +7073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35221a04040fe854e8a9d36ac84fa55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickableInteractable
---- !u!114 &1899399277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899399270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a96a637c8909046a5717aa29aa2d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSpecificMenuInteractable
-  menuController: {fileID: 60408701}
-  menuType: 2
 --- !u!1001 &1934816067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7373,9 +7147,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12a82a69b86d22d4ab9f3c48c1ac3f5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1197631692}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12a82a69b86d22d4ab9f3c48c1ac3f5d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1197631696}
   m_SourcePrefab: {fileID: 100100000, guid: 12a82a69b86d22d4ab9f3c48c1ac3f5d, type: 3}
 --- !u!1 &1951415664
 GameObject:
@@ -7459,9 +7230,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867914233}
-        m_TargetAssemblyTypeName: TravelMenuUI, Assembly-CSharp
-        m_MethodName: ChooseGym
+      - m_Target: {fileID: 1967961089}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: GoToGym
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7563,18 +7334,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: CancelInvoke
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8110,18 +7869,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &2024291497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8212,9 +7959,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 867914233}
-        m_TargetAssemblyTypeName: TravelMenuUI, Assembly-CSharp
-        m_MethodName: Close
+      - m_Target: {fileID: 1967961089}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: CancelInvoke
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8237,6 +7984,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -8928595968697309420, guid: c0fa081718e82c640b2ade3b2dc7b26b, type: 3}
   m_PrefabInstance: {fileID: 1893007129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2084994101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084994099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2b2a510b5c0744b80657382afbfe6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LaundryInteractable
+  choiceUI: {fileID: 0}
 --- !u!65 &2084994102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8270,20 +8030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35221a04040fe854e8a9d36ac84fa55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickableInteractable
---- !u!114 &2084994105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084994099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a96a637c8909046a5717aa29aa2d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenSpecificMenuInteractable
-  menuController: {fileID: 60408701}
-  menuType: 2
 --- !u!1 &2089829543
 GameObject:
   m_ObjectHideFlags: 0
@@ -8418,18 +8164,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1967961089}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
         m_MethodName: DoLaundry
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 60408701}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: CloseAllMenus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -34,15 +34,15 @@ public class UIHud : MonoBehaviour
         if (promptText) promptText.text = msg;
     }
 
-    private void Refresh()
-    {
-        if (moneyText) moneyText.text = $"£{state.money}";
-        if (energyText) energyText.text = $"Energy: {state.energy}";
-        if (stressText) stressText.text = $"Stress: {state.stress}";
-        if (hungerText) hungerText.text = $"Hunger: {state.hunger}";
-        if (hygieneText) hygieneText.text = $"Hygiene: {state.hygiene}";
-        if (gradesText) gradesText.text = $"Grades: {state.grades}";
+private void Refresh()
+{
+    if (moneyText) moneyText.text = $"£{state.money}";
+    if (energyText) energyText.text = $"{state.energy}";
+    if (stressText) stressText.text = $"{state.stress}";
+    if (hungerText) hungerText.text = $"{state.hunger}";
+    if (hygieneText) hygieneText.text = $"{state.hygiene}";
+    if (gradesText) gradesText.text = $"{state.grades}";
 
-        if (dayTimeText) dayTimeText.text = $"{timeSystem.day} - {timeSystem.timeBlock}";
-    }
+    if (dayTimeText) dayTimeText.text = $"{timeSystem.day} - {timeSystem.timeBlock}";
+}
 }

@@ -40,4 +40,21 @@ public class TravelMenuUI : MonoBehaviour
         Close();
         work.Interact();
     }
+
+    public void ChooseGym()
+{
+    Close();
+
+    var actions = FindObjectOfType<PlayerActions>();
+    actions.GoToGym();
 }
+
+public void ChooseDowntown()
+{
+    Close();
+
+    var actions = FindObjectOfType<PlayerActions>();
+    actions.GoDowntown();
+}
+}
+

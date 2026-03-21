@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DoorWorkInteractable : MonoBehaviour, IInteractable
+public class DoorWorkInteractable : MonoBehaviour
 {
     public string Prompt => "Go to Work (+Money, -Energy, -Hunger, -Hygiene, +Stress)";
 
