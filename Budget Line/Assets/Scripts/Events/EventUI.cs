@@ -14,6 +14,7 @@ public class EventUI : MonoBehaviour
 
     [SerializeField] private GameState state;
     [SerializeField] private TimeSystem timeSystem;
+    [SerializeField] private EventData libraryContestReason;
 
     private void Awake()
     {
@@ -49,22 +50,28 @@ public class EventUI : MonoBehaviour
         }
     }
 
-    private void Choose(int index)
+   private void Choose(int index)
+{
+    var c = current.choices[index];
+
+    if (current.title == "Library Fine" && c.label == "Contest")
     {
-        var c = current.choices[index];
-
-        state.AddMoney(c.moneyDelta);
-        state.AddEnergy(c.energyDelta);
-        state.AddStress(c.stressDelta);
-        state.AddHunger(c.hungerDelta);
-        state.AddHygiene(c.hygieneDelta);
-        state.AddGrades(c.gradesDelta);
-
-        if (c.timeBlocksCost > 0)
-            timeSystem.AdvanceTime(c.timeBlocksCost);
-
-        panel.SetActive(false);
+        Show(libraryContestReason);
+        return;
     }
+
+    state.AddMoney(c.moneyDelta);
+    state.AddEnergy(c.energyDelta);
+    state.AddStress(c.stressDelta);
+    state.AddHunger(c.hungerDelta);
+    state.AddHygiene(c.hygieneDelta);
+    state.AddGrades(c.gradesDelta);
+
+    if (c.timeBlocksCost > 0)
+        timeSystem.AdvanceTime(c.timeBlocksCost);
+
+    panel.SetActive(false);
+}
 
     public void ShowCustom(string title, string message)
 {

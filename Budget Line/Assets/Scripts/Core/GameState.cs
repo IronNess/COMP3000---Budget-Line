@@ -4,7 +4,7 @@ using System;
 public class GameState : MonoBehaviour
 {
     [Header("Core Stats")]
-    public int money = 200;
+    public int money = 0; // Starting money is 0 before student loan added
     public int energy = 70;   // 0..100
     public int stress = 20;   // 0..100
     public int hunger = 70;   // 0..100

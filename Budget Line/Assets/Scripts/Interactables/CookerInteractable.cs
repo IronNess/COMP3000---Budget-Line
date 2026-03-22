@@ -20,6 +20,7 @@ public class CookerInteractable : MonoBehaviour
             "Cooking a meal takes longer, but restores much more hunger.",
             new InteractionChoice("Cook a meal", () =>
             {
+                state.AddMoney(-15);
                 state.AddHunger(+35);
                 state.AddEnergy(-2);
                 timeSystem.AdvanceTime(2);

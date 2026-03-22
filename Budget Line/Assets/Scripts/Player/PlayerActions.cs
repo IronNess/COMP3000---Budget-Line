@@ -99,12 +99,15 @@ public class PlayerActions : MonoBehaviour
     {
         state.AddHygiene(+10);
         time.AdvanceTime(1);
+        
     }
 
     public void Bath()
     {
         state.AddHygiene(+30);
         time.AdvanceTime(2);
+        state.AddMoney(-5);
+        state.AddStress(-3);
     }
 
     public void DoLaundry()
@@ -112,6 +115,7 @@ public class PlayerActions : MonoBehaviour
         state.AddHygiene(+15);
         state.AddEnergy(-5);
         state.AddStress(+1);
+        state.AddMoney(-20);
 
         time.AdvanceTime(1);
     }
@@ -159,6 +163,7 @@ public class PlayerActions : MonoBehaviour
         state.AddEnergy(-12);
         state.AddStress(-6);
         state.AddHunger(-8);
+        state.AddMoney(-10);
 
         
 
@@ -167,7 +172,7 @@ public class PlayerActions : MonoBehaviour
 
     public void GoDowntown()
     {
-        state.AddMoney(-10);
+        state.AddMoney(-30);
         state.AddEnergy(-8);
         state.AddStress(-8);
 

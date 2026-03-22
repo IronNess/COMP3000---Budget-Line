@@ -1,0 +1,4641 @@
+fileFormatVersion: 2
+guid: 90a8087209834714b8073d14bec8cb22
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -830209635540930189
+    second: DayTime_0
+  - first:
+      213: 2465496072395025780
+    second: DayTime_1
+  - first:
+      213: 6694449547872799087
+    second: DayTime_2
+  - first:
+      213: -3878205065144523043
+    second: DayTime_3
+  - first:
+      213: 4771847523283763166
+    second: DayTime_4
+  - first:
+      213: -4019419919555050497
+    second: DayTime_5
+  - first:
+      213: -7780605858314611726
+    second: DayTime_6
+  - first:
+      213: -3064164074180720812
+    second: DayTime_7
+  - first:
+      213: -6389849373348639052
+    second: DayTime_8
+  - first:
+      213: -2725114870936100161
+    second: DayTime_9
+  - first:
+      213: 8090475315047319267
+    second: DayTime_10
+  - first:
+      213: -3648057373282440215
+    second: DayTime_11
+  - first:
+      213: -5862442525166082986
+    second: DayTime_12
+  - first:
+      213: -5012052490067294608
+    second: DayTime_13
+  - first:
+      213: 188719104874871649
+    second: DayTime_14
+  - first:
+      213: 5979953215621899972
+    second: DayTime_15
+  - first:
+      213: -1336802143936225249
+    second: DayTime_16
+  - first:
+      213: -1485346171099316658
+    second: DayTime_17
+  - first:
+      213: 8081256655161763446
+    second: DayTime_18
+  - first:
+      213: 8942749572335447506
+    second: DayTime_19
+  - first:
+      213: 5970630998777707419
+    second: DayTime_20
+  - first:
+      213: 2222317451167327319
+    second: DayTime_21
+  - first:
+      213: -8554670138084865302
+    second: DayTime_22
+  - first:
+      213: -5384905441037517062
+    second: DayTime_23
+  - first:
+      213: 1224523459620750441
+    second: DayTime_24
+  - first:
+      213: -4861610014745500187
+    second: DayTime_25
+  - first:
+      213: 7732177012285332208
+    second: DayTime_26
+  - first:
+      213: 561539774175390137
+    second: DayTime_27
+  - first:
+      213: -7195940519763630576
+    second: DayTime_28
+  - first:
+      213: -2971428335168942906
+    second: DayTime_29
+  - first:
+      213: -158150333013899679
+    second: DayTime_30
+  - first:
+      213: 6080245894064913761
+    second: DayTime_31
+  - first:
+      213: -597203789899078590
+    second: DayTime_32
+  - first:
+      213: 2606856084950022573
+    second: DayTime_33
+  - first:
+      213: 2846340270064467469
+    second: DayTime_34
+  - first:
+      213: -8339066737250987658
+    second: DayTime_35
+  - first:
+      213: 369402745218484017
+    second: DayTime_36
+  - first:
+      213: -597391706035369577
+    second: DayTime_37
+  - first:
+      213: -6504218587050871329
+    second: DayTime_38
+  - first:
+      213: -724458398320778482
+    second: DayTime_39
+  - first:
+      213: 6278738005654189824
+    second: DayTime_40
+  - first:
+      213: 2474890337167660643
+    second: DayTime_41
+  - first:
+      213: 4231871463152191125
+    second: DayTime_42
+  - first:
+      213: -6042395472303284565
+    second: DayTime_43
+  - first:
+      213: -7446012847136632864
+    second: DayTime_44
+  - first:
+      213: -8362807215162309845
+    second: DayTime_45
+  - first:
+      213: -4068500836529609418
+    second: DayTime_46
+  - first:
+      213: -6259067037531280637
+    second: DayTime_47
+  - first:
+      213: 2992717610101494196
+    second: DayTime_48
+  - first:
+      213: -7190791883949641155
+    second: DayTime_49
+  - first:
+      213: 4131679047473103661
+    second: DayTime_50
+  - first:
+      213: -5521034123346092838
+    second: DayTime_51
+  - first:
+      213: 5311296072198131887
+    second: DayTime_52
+  - first:
+      213: -8723471270248247759
+    second: DayTime_53
+  - first:
+      213: 1969184212614564549
+    second: DayTime_54
+  - first:
+      213: -2308171608368618684
+    second: DayTime_55
+  - first:
+      213: -5948302283515578982
+    second: DayTime_56
+  - first:
+      213: 4722484350132766030
+    second: DayTime_57
+  - first:
+      213: -8370885769842490047
+    second: DayTime_58
+  - first:
+      213: -3964466121257822059
+    second: DayTime_59
+  - first:
+      213: 8711905808142425583
+    second: DayTime_60
+  - first:
+      213: -5415067328075269842
+    second: DayTime_61
+  - first:
+      213: 4158729800064730522
+    second: DayTime_62
+  - first:
+      213: -7511590296921602970
+    second: DayTime_63
+  - first:
+      213: -8662432099256477968
+    second: DayTime_64
+  - first:
+      213: -4761389494942386927
+    second: DayTime_65
+  - first:
+      213: 6322837228755839664
+    second: DayTime_66
+  - first:
+      213: 7942052848721564761
+    second: DayTime_67
+  - first:
+      213: -7857090075237654166
+    second: DayTime_68
+  - first:
+      213: 6052486923470118128
+    second: DayTime_69
+  - first:
+      213: 2823693516054579795
+    second: DayTime_70
+  - first:
+      213: -5317059188501884160
+    second: DayTime_71
+  - first:
+      213: -1977272573962944263
+    second: DayTime_72
+  - first:
+      213: -905088144024956006
+    second: DayTime_73
+  - first:
+      213: 6783826026653217221
+    second: DayTime_74
+  - first:
+      213: -8203008450409951544
+    second: DayTime_75
+  - first:
+      213: -4944651902220672885
+    second: DayTime_76
+  - first:
+      213: -6845659572881885388
+    second: DayTime_77
+  - first:
+      213: -8569558628234745196
+    second: DayTime_78
+  - first:
+      213: 7145667897233539237
+    second: DayTime_79
+  - first:
+      213: -9161024297614003204
+    second: DayTime_80
+  - first:
+      213: 4570132193456981078
+    second: DayTime_81
+  - first:
+      213: 3994731336665304122
+    second: DayTime_82
+  - first:
+      213: 8353168264948474715
+    second: DayTime_83
+  - first:
+      213: 7535641755990552554
+    second: DayTime_84
+  - first:
+      213: 7188220765340287587
+    second: DayTime_85
+  - first:
+      213: 2123931821237426878
+    second: DayTime_86
+  - first:
+      213: 1345882901388699912
+    second: DayTime_87
+  - first:
+      213: -422792927493746882
+    second: DayTime_88
+  - first:
+      213: 8607538351170798486
+    second: DayTime_89
+  - first:
+      213: -4402896963004639592
+    second: DayTime_90
+  - first:
+      213: -7458173742338632835
+    second: DayTime_91
+  - first:
+      213: -2406553965736142350
+    second: DayTime_92
+  - first:
+      213: -1535563632284391487
+    second: DayTime_93
+  - first:
+      213: -8138496168549159320
+    second: DayTime_94
+  - first:
+      213: -6885187246474367497
+    second: DayTime_95
+  - first:
+      213: -4928613666075120418
+    second: DayTime_96
+  - first:
+      213: 1032468598298376618
+    second: DayTime_97
+  - first:
+      213: 3135040408265373692
+    second: DayTime_98
+  - first:
+      213: -4538507879832978163
+    second: DayTime_99
+  - first:
+      213: -121429608056514658
+    second: DayTime_100
+  - first:
+      213: -6779930111038157618
+    second: DayTime_101
+  - first:
+      213: -8492430295931831480
+    second: DayTime_102
+  - first:
+      213: 2999215908479953221
+    second: DayTime_103
+  - first:
+      213: 3590927068837119658
+    second: DayTime_104
+  - first:
+      213: -7252934881480791581
+    second: DayTime_105
+  - first:
+      213: 8691967815079247666
+    second: DayTime_106
+  - first:
+      213: 6408996330659074593
+    second: DayTime_107
+  - first:
+      213: 47157080307449338
+    second: DayTime_108
+  - first:
+      213: -2554988752145957099
+    second: DayTime_109
+  - first:
+      213: 3761644720312505499
+    second: DayTime_110
+  - first:
+      213: 6094768013837058438
+    second: DayTime_111
+  - first:
+      213: -6478749718900723185
+    second: DayTime_112
+  - first:
+      213: 7130162830898393717
+    second: DayTime_113
+  - first:
+      213: 8171240212810957210
+    second: DayTime_114
+  - first:
+      213: -5793999921951421584
+    second: DayTime_115
+  - first:
+      213: -6124195057599548327
+    second: DayTime_116
+  - first:
+      213: 6685741616480087146
+    second: DayTime_117
+  - first:
+      213: 2694366197978779368
+    second: DayTime_118
+  - first:
+      213: 5123720281993414456
+    second: DayTime_119
+  - first:
+      213: -231722298231562150
+    second: DayTime_120
+  - first:
+      213: -642060325175979195
+    second: DayTime_121
+  - first:
+      213: -7942192844748398230
+    second: DayTime_122
+  - first:
+      213: 4740981552328648133
+    second: DayTime_123
+  - first:
+      213: -1699485584571360834
+    second: DayTime_124
+  - first:
+      213: -4592205391787635675
+    second: DayTime_125
+  - first:
+      213: -8500556531627149266
+    second: DayTime_126
+  - first:
+      213: 5913219159910280866
+    second: DayTime_127
+  - first:
+      213: -6551846603866297571
+    second: DayTime_128
+  - first:
+      213: 7063508298632686737
+    second: DayTime_129
+  - first:
+      213: -375389913109866412
+    second: DayTime_130
+  - first:
+      213: 1250200877840384804
+    second: DayTime_131
+  - first:
+      213: -3635129902173402433
+    second: DayTime_132
+  - first:
+      213: -1210970992795834018
+    second: DayTime_133
+  - first:
+      213: -763758477853831092
+    second: DayTime_134
+  - first:
+      213: -2278152765030045908
+    second: DayTime_135
+  - first:
+      213: -8078958705611957742
+    second: DayTime_136
+  - first:
+      213: -4542267011462389129
+    second: DayTime_137
+  - first:
+      213: -2841307516461667336
+    second: DayTime_138
+  - first:
+      213: 7202499602212965286
+    second: DayTime_139
+  - first:
+      213: 6213118417935907909
+    second: DayTime_140
+  - first:
+      213: 3826583498352820512
+    second: DayTime_141
+  - first:
+      213: 6434457739997847806
+    second: DayTime_142
+  - first:
+      213: -7336878567214781038
+    second: DayTime_143
+  - first:
+      213: -2555826006885043255
+    second: DayTime_144
+  - first:
+      213: 8223201335039827474
+    second: DayTime_145
+  - first:
+      213: 7670958503763849531
+    second: DayTime_146
+  - first:
+      213: -601275910268211292
+    second: DayTime_147
+  - first:
+      213: -4268227820425925833
+    second: DayTime_148
+  - first:
+      213: -5812545867716916775
+    second: DayTime_149
+  - first:
+      213: -4568940749806647108
+    second: DayTime_150
+  - first:
+      213: 7764871486938611789
+    second: DayTime_151
+  - first:
+      213: -3046770901046968258
+    second: DayTime_152
+  - first:
+      213: 2907302601216351382
+    second: DayTime_153
+  - first:
+      213: 5570074773530955918
+    second: DayTime_154
+  - first:
+      213: -2175554896153909397
+    second: DayTime_155
+  - first:
+      213: 6617991630535559089
+    second: DayTime_156
+  - first:
+      213: -2949913430914002914
+    second: DayTime_157
+  - first:
+      213: 3689178811418671641
+    second: DayTime_158
+  - first:
+      213: -1001401784738769745
+    second: DayTime_159
+  - first:
+      213: -2602137792777429819
+    second: DayTime_160
+  - first:
+      213: 8651143682661113787
+    second: DayTime_161
+  - first:
+      213: -8577403094096897122
+    second: DayTime_162
+  - first:
+      213: 9179416569527687063
+    second: DayTime_163
+  - first:
+      213: 5780567361680486273
+    second: DayTime_164
+  - first:
+      213: 8812514781190913373
+    second: DayTime_165
+  - first:
+      213: -991314265574725958
+    second: DayTime_166
+  - first:
+      213: -2383638459184838566
+    second: DayTime_167
+  - first:
+      213: 266378649050433008
+    second: DayTime_168
+  - first:
+      213: 7142063754079048753
+    second: DayTime_169
+  - first:
+      213: 4494158066469877237
+    second: DayTime_170
+  - first:
+      213: 6212865213715084808
+    second: DayTime_171
+  - first:
+      213: 1035431054791617351
+    second: DayTime_172
+  - first:
+      213: 5757370922653025819
+    second: DayTime_173
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DayTime_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 382
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371f9703cb08a74f0800000000000000
+      internalID: -830209635540930189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 839
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47de9367d93373220800000000000000
+      internalID: 2465496072395025780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 798
+        width: 12
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f698bb3256677ec50800000000000000
+      internalID: 6694449547872799087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 766
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6a0f57a09dd2ac0800000000000000
+      internalID: -3878205065144523043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 747
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edff7a34a02093240800000000000000
+      internalID: 4771847523283763166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 734
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3cac301e62838c0800000000000000
+      internalID: -4019419919555050497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 710
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f395ddf13cb50490800000000000000
+      internalID: -7780605858314611726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 702
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 457c1f85207e975d0800000000000000
+      internalID: -3064164074180720812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_8
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 359
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be4d4d89d1b257a0800000000000000
+      internalID: -6389849373348639052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_9
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 263
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb228b196727e2ad0800000000000000
+      internalID: -2725114870936100161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 215
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e646711f64274070800000000000000
+      internalID: 8090475315047319267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 198
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eb6141b52f7f5dc0800000000000000
+      internalID: -3648057373282440215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 726
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 654e45b759b64aea0800000000000000
+      internalID: -5862442525166082986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 719
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0764de5b0dc917ab0800000000000000
+      internalID: -5012052490067294608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_14
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 694
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b7568a6077e9200800000000000000
+      internalID: 188719104874871649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 679
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c6299634cf0df250800000000000000
+      internalID: 5979953215621899972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 661
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1063b36889b27de0800000000000000
+      internalID: -1336802143936225249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 654
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4e732fe68df26be0800000000000000
+      internalID: -1485346171099316658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 533
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676adad8c14662070800000000000000
+      internalID: 8081256655161763446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 511
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dda456fa570b1c70800000000000000
+      internalID: 8942749572335447506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 487
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bb4177241fbd250800000000000000
+      internalID: 5970630998777707419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 436
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754eafe82f147de10800000000000000
+      internalID: 2222317451167327319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 326
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea4fc085d4b74980800000000000000
+      internalID: -8554670138084865302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 319
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afef3e52809f445b0800000000000000
+      internalID: -5384905441037517062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_24
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 279
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 964c3d549916ef010800000000000000
+      internalID: 1224523459620750441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 269
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5ec921377188cb0800000000000000
+      internalID: -4861610014745500187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_26
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 251
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa55bd96063e4b60800000000000000
+      internalID: 7732177012285332208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_27
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 206
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b92afe037dfac700800000000000000
+      internalID: 561539774175390137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_28
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 87
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01626a61932e22c90800000000000000
+      internalID: -7195940519763630576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_29
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 791
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc89b62cad53c6d0800000000000000
+      internalID: -2971428335168942906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_30
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 686
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166c89b2c132ecdf0800000000000000
+      internalID: -158150333013899679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_31
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 671
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d34c61d6f516450800000000000000
+      internalID: 6080245894064913761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_32
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 648
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2446c84315e46b7f0800000000000000
+      internalID: -597203789899078590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_33
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 631
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9f20c2cc96d2420800000000000000
+      internalID: 2606856084950022573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_34
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 614
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0ef413256b308720800000000000000
+      internalID: 2846340270064467469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 583
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67111e71cfea54c80800000000000000
+      internalID: -8339066737250987658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_36
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 540
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1374dcfe6d1602500800000000000000
+      internalID: 369402745218484017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_37
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 526
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7994ff19863a5b7f0800000000000000
+      internalID: -597391706035369577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_38
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 479
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5f659e7af5cb5a0800000000000000
+      internalID: -6504218587050871329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_39
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 455
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03aa81dce432f5f0800000000000000
+      internalID: -724458398320778482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_40
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 448
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00733c033fe822750800000000000000
+      internalID: 6278738005654189824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_41
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 399
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366dcec26a3985220800000000000000
+      internalID: 2474890337167660643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_42
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 390
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5968c40aca0aaba30800000000000000
+      internalID: 4231871463152191125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_43
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 351
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae1fe8f459152ca0800000000000000
+      internalID: -6042395472303284565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_44
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 286
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef0d6524c27aa890800000000000000
+      internalID: -7446012847136632864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_45
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 991
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b234d27552751fb80800000000000000
+      internalID: -8362807215162309845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_46
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 903
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 635e5468b08c987c0800000000000000
+      internalID: -4068500836529609418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_47
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 870
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b679af0b35329a0800000000000000
+      internalID: -6259067037531280637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_48
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 854
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1d72f6fc4488920800000000000000
+      internalID: 2992717610101494196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_49
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 847
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d327b6741ec253c90800000000000000
+      internalID: -7190791883949641155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_50
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 639
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d230f8ef33ca65930800000000000000
+      internalID: 4131679047473103661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_51
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 622
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc552d67b85163b0800000000000000
+      internalID: -5521034123346092838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_52
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 551
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa01c4023a385b940800000000000000
+      internalID: 5311296072198131887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_53
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 518
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e0780491100f680800000000000000
+      internalID: -8723471270248247759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_54
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 469
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cac232bb92f35b10800000000000000
+      internalID: 1969184212614564549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_55
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 462
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443eb82c62ab7ffd0800000000000000
+      internalID: -2308171608368618684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_56
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 431
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a95b86ea692637da0800000000000000
+      internalID: -5948302283515578982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_57
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 423
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e454103ee72a98140800000000000000
+      internalID: 4722484350132766030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_58
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 415
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1458a214eb3a4db80800000000000000
+      internalID: -8370885769842490047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_59
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 406
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5985b5e31136bf8c0800000000000000
+      internalID: -3964466121257822059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_60
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 335
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fedddf2cc28e6e870800000000000000
+      internalID: 8711905808142425583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_61
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 310
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29ff3394f0d9d4b0800000000000000
+      internalID: -5415067328075269842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_62
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 303
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9580b128b6c6b930800000000000000
+      internalID: 4158729800064730522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_63
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 246
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66487bd4c6871c790800000000000000
+      internalID: -7511590296921602970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_64
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 191
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f650e8b6ebd8c780800000000000000
+      internalID: -8662432099256477968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_65
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 182
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115bea43b752cedb0800000000000000
+      internalID: -4761389494942386927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_66
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 174
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba6b90b5fa3fb750800000000000000
+      internalID: 6322837228755839664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_67
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 166
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9549d63bcf6d73e60800000000000000
+      internalID: 7942052848721564761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_68
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 143
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a616639843206f290800000000000000
+      internalID: -7857090075237654166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_69
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 62
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc12291ac0cef350800000000000000
+      internalID: 6052486923470118128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_70
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 951
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ac103da46cf2720800000000000000
+      internalID: 2823693516054579795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_71
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 237
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0035e9bc6d20636b0800000000000000
+      internalID: -5317059188501884160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_72
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 809
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f001dce1115f84e0800000000000000
+      internalID: -1977272573962944263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_73
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 811
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9399fcd02b7073f0800000000000000
+      internalID: -905088144024956006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_74
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 656
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1f6b834ddf42e50800000000000000
+      internalID: 6783826026653217221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_75
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 230
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce89c7964f092e80800000000000000
+      internalID: -8203008450409951544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_76
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 808
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b806d26fa41116bb0800000000000000
+      internalID: -4944651902220672885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_77
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 547
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4377f1963e45ff0a0800000000000000
+      internalID: -6845659572881885388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_78
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 528
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a2f22c4dfc21980800000000000000
+      internalID: -8569558628234745196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_79
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 516
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a08489d7138a2360800000000000000
+      internalID: 7145667897233539237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_80
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 506
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3bef140f08dd080800000000000000
+      internalID: -9161024297614003204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_81
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 494
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 654849f240f5c6f30800000000000000
+      internalID: 4570132193456981078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_82
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 488
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c8e075cf2207730800000000000000
+      internalID: 3994731336665304122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_83
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 448
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53e15da74a6ce370800000000000000
+      internalID: 8353168264948474715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_84
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 249
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aefea64604af39860800000000000000
+      internalID: 7535641755990552554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_85
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 793
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362c13583b0b1c360800000000000000
+      internalID: 7188220765340287587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_86
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 479
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eba51040db8b97d10800000000000000
+      internalID: 2123931821237426878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_87
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 472
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 809ab863e598da210800000000000000
+      internalID: 1345882901388699912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_88
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 464
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f003f8210f12af0800000000000000
+      internalID: -422792927493746882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_89
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 224
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6934614968e147770800000000000000
+      internalID: 8607538351170798486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_90
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 817
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89656792a84c5e2c0800000000000000
+      internalID: -4402896963004639592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_91
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 500
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7392c61f7e3f7890800000000000000
+      internalID: -7458173742338632835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_92
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 812
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f95d7b2be33a9ed0800000000000000
+      internalID: -2406553965736142350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_93
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 807
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c72eaf130590bae0800000000000000
+      internalID: -1535563632284391487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_94
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 558
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86eefb3bad04e0f80800000000000000
+      internalID: -8138496168549159320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_95
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 538
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd68d9bda6e270a0800000000000000
+      internalID: -6885187246474367497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_96
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 1251
+        height: 755
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edce47ecbfb0a9bb0800000000000000
+      internalID: -4928613666075120418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_97
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 233
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9f15b48b0145e00800000000000000
+      internalID: 1032468598298376618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_98
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 233
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf7372324a6e18b20800000000000000
+      internalID: 3135040408265373692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_99
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 752
+        width: 381
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0d7e3c112bf301c0800000000000000
+      internalID: -4538507879832978163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_100
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 815
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9793923a68905ef0800000000000000
+      internalID: -121429608056514658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_101
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 495
+        width: 691
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc88915c79d8e1a0800000000000000
+      internalID: -6779930111038157618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_102
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 264
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84bb73304a3d42a80800000000000000
+      internalID: -8492430295931831480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_103
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 230
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549e5ad6afa5f9920800000000000000
+      internalID: 2999215908479953221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_104
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 272
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa60f50c42985d130800000000000000
+      internalID: 3590927068837119658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_105
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 219
+        width: 12
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e92c4a2726685b90800000000000000
+      internalID: -7252934881480791581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_106
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 779
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f3de00da210a870800000000000000
+      internalID: 8691967815079247666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_107
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 768
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12257b7d43451f850800000000000000
+      internalID: 6408996330659074593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_108
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 759
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afdbe5c5d1987a000800000000000000
+      internalID: 47157080307449338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_109
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 703
+        width: 10
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fb83f444bda8cd0800000000000000
+      internalID: -2554988752145957099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_110
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 291
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94537d61fb043430800000000000000
+      internalID: 3761644720312505499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_111
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 259
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681cb259737f49450800000000000000
+      internalID: 6094768013837058438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_112
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 203
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f02b240e47bd616a0800000000000000
+      internalID: -6478749718900723185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_113
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 187
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5727466415d63f260800000000000000
+      internalID: 7130162830898393717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_114
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 181
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a910cf23ea3166170800000000000000
+      internalID: 8171240212810957210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_115
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 246
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07bc177d4c3979fa0800000000000000
+      internalID: -5793999921951421584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_116
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 763
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9547390ea0d720ba0800000000000000
+      internalID: -6124195057599548327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_117
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 191
+        width: 15
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c675ed39688cc50800000000000000
+      internalID: 6685741616480087146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_118
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 727
+        width: 14
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee485d18cf446520800000000000000
+      internalID: 2694366197978779368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_119
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 270
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8378ea8237c1b1740800000000000000
+      internalID: 5123720281993414456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_120
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 183
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50ee572cc1c8ccf0800000000000000
+      internalID: -231722298231562150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_121
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 832
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54393893981f617f0800000000000000
+      internalID: -642060325175979195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_122
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 783
+        width: 7
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a616f1fefa9a7c190800000000000000
+      internalID: -7942192844748398230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_123
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 263
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c5aa316a995bc140800000000000000
+      internalID: 4740981552328648133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_124
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 176
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb91ab67dd63a68e0800000000000000
+      internalID: -1699485584571360834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_125
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 168
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c4dd6d6853540c0800000000000000
+      internalID: -4592205391787635675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_126
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 152
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28bc335fd4f70a80800000000000000
+      internalID: -8500556531627149266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_127
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 144
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae6c711f79ff0250800000000000000
+      internalID: 5913219159910280866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_128
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 97
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b23b91a3a2315a0800000000000000
+      internalID: -6551846603866297571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_129
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 72
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19c6600af5f960260800000000000000
+      internalID: 7063508298632686737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_130
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 39
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45852d8ecd85acaf0800000000000000
+      internalID: -375389913109866412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_131
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 23
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423ce85131b995110800000000000000
+      internalID: 1250200877840384804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_132
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 858
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbacd8c1d9c6d8dc0800000000000000
+      internalID: -3635129902173402433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_133
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 850
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e592a1d4c44c13fe0800000000000000
+      internalID: -1210970992795834018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_134
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 824
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40545106b59665f0800000000000000
+      internalID: -763758477853831092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_135
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 818
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c276f4061206260e0800000000000000
+      internalID: -2278152765030045908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_136
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 130
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21a13f48cd5c1ef80800000000000000
+      internalID: -8078958705611957742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_137
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 66
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7722fc21830a6f0c0800000000000000
+      internalID: -4542267011462389129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_138
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 795
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fba7af1ed5a198d0800000000000000
+      internalID: -2841307516461667336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_139
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 774
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6abcbcc4a3b64f360800000000000000
+      internalID: 7202499602212965286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_140
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 757
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54cb188584e693650800000000000000
+      internalID: 6213118417935907909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_141
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 254
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02101baea61ca1530800000000000000
+      internalID: 3826583498352820512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_142
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 211
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef0a5da2939cb4950800000000000000
+      internalID: 6434457739997847806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_143
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 791
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d6cf8c0db2e2a90800000000000000
+      internalID: -7336878567214781038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_144
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 292
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c379efb9c1e78cd0800000000000000
+      internalID: -2555826006885043255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_145
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 287
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e119bbb0eae1270800000000000000
+      internalID: 8223201335039827474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_146
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 275
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b313b9fdd18b47a60800000000000000
+      internalID: 7670958503763849531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_147
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 246
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4afa67cceb6d7a7f0800000000000000
+      internalID: -601275910268211292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_148
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 238
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ba21f496534c4c0800000000000000
+      internalID: -4268227820425925833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_149
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 93
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9811a5450b55fa0800000000000000
+      internalID: -5812545867716916775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_150
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 752
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8c7f7689cd790c0800000000000000
+      internalID: -4568940749806647108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_151
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 262
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4009813a7d52cb60800000000000000
+      internalID: 7764871486938611789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_152
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 203
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e30491b0202b7b5d0800000000000000
+      internalID: -3046770901046968258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_153
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 171
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69cd110ff40d85820800000000000000
+      internalID: 2907302601216351382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_154
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 103
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e805da8be71ec4d40800000000000000
+      internalID: 5570074773530955918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_155
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 39
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6762693950eec1e0800000000000000
+      internalID: -2175554896153909397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_156
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 762
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b784980354d7db50800000000000000
+      internalID: 6617991630535559089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_157
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 753
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1097382d5dcf07d0800000000000000
+      internalID: -2949913430914002914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_158
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 744
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91af1873598923330800000000000000
+      internalID: 3689178811418671641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_159
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 234
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa41437e16e4a12f0800000000000000
+      internalID: -1001401784738769745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_160
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 777
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ccd1e4d67953ebd0800000000000000
+      internalID: -2602137792777429819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_161
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 266
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf51e9f7590f0870800000000000000
+      internalID: 8651143682661113787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_162
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 218
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b9409b451f6f880800000000000000
+      internalID: -8577403094096897122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_163
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 810
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79758004cb6d36f70800000000000000
+      internalID: 9179416569527687063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_164
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 785
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18fae218363b83050800000000000000
+      internalID: 5780567361680486273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_165
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 787
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d73c6b0875c4a70800000000000000
+      internalID: 8812514781190913373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_166
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 773
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab624ab7de42e32f0800000000000000
+      internalID: -991314265574725958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_167
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 765
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58045f437d9beed0800000000000000
+      internalID: -2383638459184838566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_168
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 757
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5466058fd52b300800000000000000
+      internalID: 266378649050433008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_169
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 595
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1341311e425bd1360800000000000000
+      internalID: 7142063754079048753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_170
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 807
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5b46c43f47e5e30800000000000000
+      internalID: 4494158066469877237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_171
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 812
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8067ed4aef7883650800000000000000
+      internalID: 6212865213715084808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_172
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 811
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b2342fe079e5e00800000000000000
+      internalID: 1035431054791617351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DayTime_173
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 796
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1685eca95a46ef40800000000000000
+      internalID: 5757370922653025819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DayTime_0: -830209635540930189
+      DayTime_1: 2465496072395025780
+      DayTime_10: 8090475315047319267
+      DayTime_100: -121429608056514658
+      DayTime_101: -6779930111038157618
+      DayTime_102: -8492430295931831480
+      DayTime_103: 2999215908479953221
+      DayTime_104: 3590927068837119658
+      DayTime_105: -7252934881480791581
+      DayTime_106: 8691967815079247666
+      DayTime_107: 6408996330659074593
+      DayTime_108: 47157080307449338
+      DayTime_109: -2554988752145957099
+      DayTime_11: -3648057373282440215
+      DayTime_110: 3761644720312505499
+      DayTime_111: 6094768013837058438
+      DayTime_112: -6478749718900723185
+      DayTime_113: 7130162830898393717
+      DayTime_114: 8171240212810957210
+      DayTime_115: -5793999921951421584
+      DayTime_116: -6124195057599548327
+      DayTime_117: 6685741616480087146
+      DayTime_118: 2694366197978779368
+      DayTime_119: 5123720281993414456
+      DayTime_12: -5862442525166082986
+      DayTime_120: -231722298231562150
+      DayTime_121: -642060325175979195
+      DayTime_122: -7942192844748398230
+      DayTime_123: 4740981552328648133
+      DayTime_124: -1699485584571360834
+      DayTime_125: -4592205391787635675
+      DayTime_126: -8500556531627149266
+      DayTime_127: 5913219159910280866
+      DayTime_128: -6551846603866297571
+      DayTime_129: 7063508298632686737
+      DayTime_13: -5012052490067294608
+      DayTime_130: -375389913109866412
+      DayTime_131: 1250200877840384804
+      DayTime_132: -3635129902173402433
+      DayTime_133: -1210970992795834018
+      DayTime_134: -763758477853831092
+      DayTime_135: -2278152765030045908
+      DayTime_136: -8078958705611957742
+      DayTime_137: -4542267011462389129
+      DayTime_138: -2841307516461667336
+      DayTime_139: 7202499602212965286
+      DayTime_14: 188719104874871649
+      DayTime_140: 6213118417935907909
+      DayTime_141: 3826583498352820512
+      DayTime_142: 6434457739997847806
+      DayTime_143: -7336878567214781038
+      DayTime_144: -2555826006885043255
+      DayTime_145: 8223201335039827474
+      DayTime_146: 7670958503763849531
+      DayTime_147: -601275910268211292
+      DayTime_148: -4268227820425925833
+      DayTime_149: -5812545867716916775
+      DayTime_15: 5979953215621899972
+      DayTime_150: -4568940749806647108
+      DayTime_151: 7764871486938611789
+      DayTime_152: -3046770901046968258
+      DayTime_153: 2907302601216351382
+      DayTime_154: 5570074773530955918
+      DayTime_155: -2175554896153909397
+      DayTime_156: 6617991630535559089
+      DayTime_157: -2949913430914002914
+      DayTime_158: 3689178811418671641
+      DayTime_159: -1001401784738769745
+      DayTime_16: -1336802143936225249
+      DayTime_160: -2602137792777429819
+      DayTime_161: 8651143682661113787
+      DayTime_162: -8577403094096897122
+      DayTime_163: 9179416569527687063
+      DayTime_164: 5780567361680486273
+      DayTime_165: 8812514781190913373
+      DayTime_166: -991314265574725958
+      DayTime_167: -2383638459184838566
+      DayTime_168: 266378649050433008
+      DayTime_169: 7142063754079048753
+      DayTime_17: -1485346171099316658
+      DayTime_170: 4494158066469877237
+      DayTime_171: 6212865213715084808
+      DayTime_172: 1035431054791617351
+      DayTime_173: 5757370922653025819
+      DayTime_18: 8081256655161763446
+      DayTime_19: 8942749572335447506
+      DayTime_2: 6694449547872799087
+      DayTime_20: 5970630998777707419
+      DayTime_21: 2222317451167327319
+      DayTime_22: -8554670138084865302
+      DayTime_23: -5384905441037517062
+      DayTime_24: 1224523459620750441
+      DayTime_25: -4861610014745500187
+      DayTime_26: 7732177012285332208
+      DayTime_27: 561539774175390137
+      DayTime_28: -7195940519763630576
+      DayTime_29: -2971428335168942906
+      DayTime_3: -3878205065144523043
+      DayTime_30: -158150333013899679
+      DayTime_31: 6080245894064913761
+      DayTime_32: -597203789899078590
+      DayTime_33: 2606856084950022573
+      DayTime_34: 2846340270064467469
+      DayTime_35: -8339066737250987658
+      DayTime_36: 369402745218484017
+      DayTime_37: -597391706035369577
+      DayTime_38: -6504218587050871329
+      DayTime_39: -724458398320778482
+      DayTime_4: 4771847523283763166
+      DayTime_40: 6278738005654189824
+      DayTime_41: 2474890337167660643
+      DayTime_42: 4231871463152191125
+      DayTime_43: -6042395472303284565
+      DayTime_44: -7446012847136632864
+      DayTime_45: -8362807215162309845
+      DayTime_46: -4068500836529609418
+      DayTime_47: -6259067037531280637
+      DayTime_48: 2992717610101494196
+      DayTime_49: -7190791883949641155
+      DayTime_5: -4019419919555050497
+      DayTime_50: 4131679047473103661
+      DayTime_51: -5521034123346092838
+      DayTime_52: 5311296072198131887
+      DayTime_53: -8723471270248247759
+      DayTime_54: 1969184212614564549
+      DayTime_55: -2308171608368618684
+      DayTime_56: -5948302283515578982
+      DayTime_57: 4722484350132766030
+      DayTime_58: -8370885769842490047
+      DayTime_59: -3964466121257822059
+      DayTime_6: -7780605858314611726
+      DayTime_60: 8711905808142425583
+      DayTime_61: -5415067328075269842
+      DayTime_62: 4158729800064730522
+      DayTime_63: -7511590296921602970
+      DayTime_64: -8662432099256477968
+      DayTime_65: -4761389494942386927
+      DayTime_66: 6322837228755839664
+      DayTime_67: 7942052848721564761
+      DayTime_68: -7857090075237654166
+      DayTime_69: 6052486923470118128
+      DayTime_7: -3064164074180720812
+      DayTime_70: 2823693516054579795
+      DayTime_71: -5317059188501884160
+      DayTime_72: -1977272573962944263
+      DayTime_73: -905088144024956006
+      DayTime_74: 6783826026653217221
+      DayTime_75: -8203008450409951544
+      DayTime_76: -4944651902220672885
+      DayTime_77: -6845659572881885388
+      DayTime_78: -8569558628234745196
+      DayTime_79: 7145667897233539237
+      DayTime_8: -6389849373348639052
+      DayTime_80: -9161024297614003204
+      DayTime_81: 4570132193456981078
+      DayTime_82: 3994731336665304122
+      DayTime_83: 8353168264948474715
+      DayTime_84: 7535641755990552554
+      DayTime_85: 7188220765340287587
+      DayTime_86: 2123931821237426878
+      DayTime_87: 1345882901388699912
+      DayTime_88: -422792927493746882
+      DayTime_89: 8607538351170798486
+      DayTime_9: -2725114870936100161
+      DayTime_90: -4402896963004639592
+      DayTime_91: -7458173742338632835
+      DayTime_92: -2406553965736142350
+      DayTime_93: -1535563632284391487
+      DayTime_94: -8138496168549159320
+      DayTime_95: -6885187246474367497
+      DayTime_96: -4928613666075120418
+      DayTime_97: 1032468598298376618
+      DayTime_98: 3135040408265373692
+      DayTime_99: -4538507879832978163
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

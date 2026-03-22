@@ -8430,7 +8430,6 @@ MonoBehaviour:
   - {fileID: 275349866}
   state: {fileID: 1967961087}
   timeSystem: {fileID: 1967961086}
-  libraryContestReason: {fileID: 11400000, guid: bceb396acde02bb4691d1eddb47f63b8, type: 2}
 --- !u!114 &1967961082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9132,12 +9131,9 @@ MonoBehaviour:
   dailyEventChance: 0.35
   actionEventChance: 0.25
   eventPool:
-  - {fileID: 11400000, guid: fdc689b17a5c08a45aa4b813e5f8ae1d, type: 2}
-  - {fileID: 11400000, guid: 1ff17099161e3294192658b7e3ee0182, type: 2}
-  - {fileID: 11400000, guid: 068e6f4998bcf7f4fb23d9e9a6573f53, type: 2}
-  - {fileID: 11400000, guid: 46fdeae1d5ddbef4ebf4c6e34501493e, type: 2}
-  - {fileID: 11400000, guid: f930332942e03684bbe91349b0bc6225, type: 2}
-  eventUI: {fileID: 1967961080}
+  - {fileID: 0}
+  - {fileID: 0}
+  eventUI: {fileID: 0}
 --- !u!4 &2089829545
 Transform:
   m_ObjectHideFlags: 0

@@ -38,8 +38,10 @@ public class StressIconUI : MonoBehaviour
         if (state == null || iconImage == null) return;
 
         int stress = state.GetStress();
+        int energy = state.GetEnergy();
 
-        if (stress >= stressedThreshold)
+        // Show stressed icon if stress is high OR energy is completely empty
+        if (stress >= stressedThreshold || energy <= 0)
             iconImage.sprite = stressedSprite;
         else
             iconImage.sprite = happySprite;

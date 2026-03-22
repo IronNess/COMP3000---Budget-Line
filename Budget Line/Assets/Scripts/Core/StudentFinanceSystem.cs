@@ -2,57 +2,83 @@ using UnityEngine;
 
 public class StudentFinanceSystem : MonoBehaviour
 {
-    [Header("Real UK student budget (Save the Student)")]
+    [Header("Finance")]
     public int monthlyLoanIncome = 750;
+    public int monthlyRent = 480;
 
-    public int rent = 529;
-    public int groceries = 146;
-    public int bills = 69;
-    public int transport = 67;
-    public int diningOut = 49;
-    public int clothingShopping = 40;
+    [Header("Calendar")]
+    public int daysPerMonth = 28;
 
-    [Header("How many days count as a 'month' in-game")]
-    public int daysPerMonth = 28; // simple 4-week month
+    [Header("Current Cycle")]
+    [SerializeField] private int totalDaysPassed = 0;
+    [SerializeField] private int daysUntilRentDue = 4; // Monday start -> Friday due
 
-    [Header("References")]
     [SerializeField] private GameState state;
-    [SerializeField] private TimeSystem timeSystem;
-
-    private int dayCounter = 0;
 
     private void Awake()
     {
         if (!state) state = FindObjectOfType<GameState>();
-        if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
 
-        ApplyMonthlyCycle(true);
+        // Give the player their loan at the start of the game
+        if (state != null)
+        {
+            state.AddMoney(monthlyLoanIncome);
+            Debug.Log($"Student loan received: +£{monthlyLoanIncome}");
+        }
     }
 
     public void OnNewDay()
     {
-        dayCounter++;
+        totalDaysPassed++;
+        daysUntilRentDue--;
 
-        if (dayCounter >= daysPerMonth)
+        // After rent day passes, reset countdown for next monthly cycle
+        if (daysUntilRentDue < 0)
         {
-            dayCounter = 0;
-            ApplyMonthlyCycle(false);
+            daysUntilRentDue = daysPerMonth - 1;
+        }
+
+        // Give the next student loan every month
+        if (totalDaysPassed > 0 && totalDaysPassed % daysPerMonth == 0)
+        {
+            if (state != null)
+            {
+                state.AddMoney(monthlyLoanIncome);
+                Debug.Log($"New monthly student loan received: +£{monthlyLoanIncome}");
+            }
         }
     }
 
-    private void ApplyMonthlyCycle(bool isFirstMonth)
+    public int GetDaysUntilRentDue()
     {
-        int totalMonthlyCosts = rent + groceries + bills + transport + diningOut + clothingShopping;
-
-        state.AddMoney(monthlyLoanIncome);
-        state.AddMoney(-totalMonthlyCosts);
-        state.AddStress(+10);
-
-        Debug.Log($"Monthly cycle applied. Income +£{monthlyLoanIncome}, Costs -£{totalMonthlyCosts}.");
+        return daysUntilRentDue;
     }
 
-    public int GetTotalMonthlyCosts()
+    public bool IsRentDueToday(TimeSystem timeSystem)
     {
-        return rent + groceries + bills + transport + diningOut + clothingShopping;
+        return timeSystem != null &&
+               timeSystem.day == WeekDay.Fri &&
+               daysUntilRentDue == 0;
+    }
+
+    public bool CanAffordRent()
+    {
+        return state != null && state.money >= monthlyRent;
+    }
+
+    public void PayRent()
+    {
+        if (state == null) return;
+
+        state.AddMoney(-monthlyRent);
+        Debug.Log($"Rent paid: -£{monthlyRent}");
+    }
+
+    public void MissRent()
+    {
+        if (state == null) return;
+
+        state.AddStress(+40);
+        Debug.Log("Rent not paid. Stress +40");
     }
 }

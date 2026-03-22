@@ -10,24 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95d4f45ec397a1b4bafd39f8e32cf0d3, type: 3}
-  m_Name: DentistCost
-  m_EditorClassIdentifier: 
-  title: Dentist Cost
-  description: You have broken a tooth and need antibiotics. Treat it or stay in
-    pain
+  m_Name: LibraryConestReason
+  m_EditorClassIdentifier: Assembly-CSharp::EventData
+  title: Library Appeal
+  description: Why did you not return the books?
   choices:
-  - label: Pay
-    moneyDelta: -120
+  - label: I forgot
+    moneyDelta: -40
     energyDelta: 0
-    stressDelta: -5
+    stressDelta: 0
     hungerDelta: 0
     hygieneDelta: 0
     gradesDelta: 0
     timeBlocksCost: 0
-  - label: Ignore
-    moneyDelta: 0
-    energyDelta: -10
-    stressDelta: 10
+  - label: I lost the books
+    moneyDelta: -40
+    energyDelta: 0
+    stressDelta: 0
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 0
+  - label: Family Emergency
+    moneyDelta: -20
+    energyDelta: 0
+    stressDelta: 0
     hungerDelta: 0
     hygieneDelta: 0
     gradesDelta: 0

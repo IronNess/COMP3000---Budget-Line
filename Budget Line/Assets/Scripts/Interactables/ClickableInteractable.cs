@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Collider))]
 public class ClickableInteractable : MonoBehaviour
@@ -15,8 +16,12 @@ public class ClickableInteractable : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    private void OnMouseUpAsButton()
     {
+  
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (interactable != null)
         {
             interactable.Interact();
