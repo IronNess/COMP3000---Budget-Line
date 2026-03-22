@@ -108,11 +108,14 @@ public class GameState : MonoBehaviour
     /// Runs once per day (when time wraps Night -> Morning)
     /// </summary>
     public void ApplyDailyConsequences()
-    {
-        // Passive decay
-        AddHunger(-10);
-        AddHygiene(-8);
-        AddStress(+5);
+{
+    // Passive decay
+    AddHunger(-10);
+    AddHygiene(-8);
+    AddStress(+5);
+
+    // Grades slowly decline over time
+    AddGrades(-1);
 
         // Debt snowball
         if (money < 0)
