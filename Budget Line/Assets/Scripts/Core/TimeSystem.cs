@@ -6,6 +6,9 @@ public class TimeSystem : MonoBehaviour
     public WeekDay day = WeekDay.Mon;
     public TimeBlock timeBlock = TimeBlock.Morning;
 
+    [Header("Progress Tracking")]
+    public int totalDaysPassed = 0;
+
     public event Action OnTimeChanged;
 
     [SerializeField] private GameState state;
@@ -20,29 +23,30 @@ public class TimeSystem : MonoBehaviour
     }
 
     public void AdvanceTime(int blocks)
-{
-    for (int i = 0; i < blocks; i++)
     {
-        // every block = passive stat decay
-        state.ApplyTimeBlockDecay();
-
-        timeBlock = NextBlock(timeBlock);
-
-        // wrap to next day
-        if (timeBlock == TimeBlock.Morning)
+        for (int i = 0; i < blocks; i++)
         {
-            day = NextDay(day);
+            // every block = passive stat decay
+            state.ApplyTimeBlockDecay();
 
-            // daily systems tick
-            state.ApplyDailyConsequences();
-            goals.CheckDaily(day);
-            events.TryTriggerDailyEvent();
-            FindObjectOfType<StudentFinanceSystem>()?.OnNewDay();
+            timeBlock = NextBlock(timeBlock);
+
+            // wrap to next day
+            if (timeBlock == TimeBlock.Morning)
+            {
+                day = NextDay(day);
+                totalDaysPassed++;
+
+                // daily systems tick
+                state.ApplyDailyConsequences();
+                goals.CheckDaily(day);
+                events.TryTriggerDailyEvent();
+                FindObjectOfType<StudentFinanceSystem>()?.OnNewDay();
+            }
         }
-    }
 
-    OnTimeChanged?.Invoke();
-}
+        OnTimeChanged?.Invoke();
+    }
 
     private TimeBlock NextBlock(TimeBlock current)
     {

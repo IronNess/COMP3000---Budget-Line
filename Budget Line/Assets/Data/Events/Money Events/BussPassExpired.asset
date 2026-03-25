@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d4f45ec397a1b4bafd39f8e32cf0d3, type: 3}
+  m_Name: BussPassExpired
+  m_EditorClassIdentifier: Assembly-CSharp::EventData
+  title: Buss Pass Expried
+  description: Your energy bill was higher than expected this week
+  choices:
+  - label: Renew It
+    moneyDelta: -15
+    energyDelta: 0
+    stressDelta: 0
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 0
+  - label: Walk Instead
+    moneyDelta: 0
+    energyDelta: -10
+    stressDelta: 0
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: 0
+    timeBlocksCost: 1
+  - label: Skip Today
+    moneyDelta: 0
+    energyDelta: 0
+    stressDelta: 0
+    hungerDelta: 0
+    hygieneDelta: 0
+    gradesDelta: -2
+    timeBlocksCost: 0

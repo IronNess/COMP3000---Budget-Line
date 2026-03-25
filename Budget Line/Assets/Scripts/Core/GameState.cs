@@ -18,6 +18,13 @@ public class GameState : MonoBehaviour
     [Tooltip("Higher = studying costs less energy.")]
     public float studyEfficiency = 1f; // 1..1.5
 
+    [Header("Event Flags")]
+public bool rentMissed = false;
+public bool landlordWarningShown = false;
+public bool evictionRiskShown = false;
+public bool burnoutRisk = false;
+    
+
     [Tooltip("Lower = work/uni causes less stress.")]
     public float resilience = 1f;      // 0.7..1
 
@@ -151,7 +158,21 @@ public class GameState : MonoBehaviour
             energy = Mathf.Clamp(energy - 5, 0, 100);
             OnStatsChanged?.Invoke();
         }
+
+        // Grades slowly decline if exhausted or overly stressed
+if (energy <= 20 || stress >= 60)
+{
+    AddGrades(-1);
+}
+
+// Burnout risk flag
+if (stress >= 85)
+{
+    burnoutRisk = true;
+}
     }
+
+    
 
     // -----------------------------
     // PROGRESSION

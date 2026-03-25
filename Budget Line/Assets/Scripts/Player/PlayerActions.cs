@@ -11,10 +11,37 @@ public class PlayerActions : MonoBehaviour
         if (!time) time = FindObjectOfType<TimeSystem>();
     }
 
+    private void ApplyStatPenaltiesBeforeAction()
+    {
+        // Hunger too low = weaker and more stressed
+        if (state.hunger < 20)
+        {
+            state.AddEnergy(-5);
+            state.AddStress(+5);
+        }
+
+        // Hygiene too low = extra stress
+        if (state.hygiene < 20)
+        {
+            state.AddStress(+5);
+        }
+
+        // Stress too high = extra penalty
+        if (state.stress > 70)
+        {
+            state.AddStress(+2);
+            state.AddEnergy(-2);
+        }
+    }
+
     // ===== UNIVERSITY =====
     public void GoToUniversity()
     {
-        state.AddGrades(+2);
+        ApplyStatPenaltiesBeforeAction();
+
+        int gradeGain = state.energy < 20 ? 0 : 2;
+
+        state.AddGrades(gradeGain);
         state.AddEnergy(-10);
         state.AddStress(+3);
 
@@ -24,7 +51,11 @@ public class PlayerActions : MonoBehaviour
     // ===== WORK (ORIGINAL) =====
     public void WorkShort()
     {
-        state.AddMoney(+30);
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 20 : 30;
+
+        state.AddMoney(moneyGain);
         state.AddEnergy(-8);
         state.AddStress(+2);
 
@@ -33,7 +64,11 @@ public class PlayerActions : MonoBehaviour
 
     public void WorkLong()
     {
-        state.AddMoney(+70);
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 50 : 70;
+
+        state.AddMoney(moneyGain);
         state.AddEnergy(-20);
         state.AddStress(+6);
 
@@ -43,7 +78,11 @@ public class PlayerActions : MonoBehaviour
     // ===== WORK (NEW HOURLY OPTIONS) =====
     public void Work2Hours()
     {
-        state.AddMoney(+20);
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 15 : 20;
+
+        state.AddMoney(moneyGain);
         state.AddEnergy(-5);
         state.AddStress(+1);
 
@@ -52,7 +91,11 @@ public class PlayerActions : MonoBehaviour
 
     public void Work4Hours()
     {
-        state.AddMoney(+40);
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 30 : 40;
+
+        state.AddMoney(moneyGain);
         state.AddEnergy(-10);
         state.AddStress(+3);
 
@@ -61,7 +104,11 @@ public class PlayerActions : MonoBehaviour
 
     public void Work6Hours()
     {
-        state.AddMoney(+65);
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 45 : 65;
+
+        state.AddMoney(moneyGain);
         state.AddEnergy(-15);
         state.AddStress(+5);
 
@@ -70,7 +117,11 @@ public class PlayerActions : MonoBehaviour
 
     public void Work8Hours()
     {
-        state.AddMoney(+90);
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 60 : 90;
+
+        state.AddMoney(moneyGain);
         state.AddEnergy(-25);
         state.AddStress(+8);
 
@@ -99,15 +150,15 @@ public class PlayerActions : MonoBehaviour
     {
         state.AddHygiene(+10);
         time.AdvanceTime(1);
-        
     }
 
     public void Bath()
     {
         state.AddHygiene(+30);
-        time.AdvanceTime(2);
         state.AddMoney(-5);
         state.AddStress(-3);
+
+        time.AdvanceTime(2);
     }
 
     public void DoLaundry()
@@ -142,7 +193,11 @@ public class PlayerActions : MonoBehaviour
     // ===== STUDY =====
     public void StudyLittle()
     {
-        state.AddGrades(+1);
+        ApplyStatPenaltiesBeforeAction();
+
+        int gradeGain = state.energy < 20 ? 0 : 1;
+
+        state.AddGrades(gradeGain);
         state.AddEnergy(-5);
 
         time.AdvanceTime(1);
@@ -150,7 +205,11 @@ public class PlayerActions : MonoBehaviour
 
     public void StudyLots()
     {
-        state.AddGrades(+3);
+        ApplyStatPenaltiesBeforeAction();
+
+        int gradeGain = state.energy < 20 ? 1 : 3;
+
+        state.AddGrades(gradeGain);
         state.AddEnergy(-15);
         state.AddStress(+5);
 
@@ -160,22 +219,72 @@ public class PlayerActions : MonoBehaviour
     // ===== WELLBEING / SOCIAL =====
     public void GoToGym()
     {
+        ApplyStatPenaltiesBeforeAction();
+
         state.AddEnergy(-12);
         state.AddStress(-6);
         state.AddHunger(-8);
         state.AddMoney(-10);
-
-        
 
         time.AdvanceTime(2);
     }
 
     public void GoDowntown()
     {
+        ApplyStatPenaltiesBeforeAction();
+
         state.AddMoney(-30);
         state.AddEnergy(-8);
         state.AddStress(-8);
 
         time.AdvanceTime(2);
+    }
+
+    public void WorkBasic()
+    {
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 18 : 25;
+
+        state.AddMoney(moneyGain);
+        state.AddEnergy(-8);
+        state.AddStress(+4);
+        time.AdvanceTime(1);
+    }
+
+    public void WorkCampusJob()
+    {
+        if (state.grades < 3)
+        {
+            Debug.Log("Not enough grades for this job.");
+            return;
+        }
+
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 30 : 45;
+
+        state.AddMoney(moneyGain);
+        state.AddEnergy(-10);
+        state.AddStress(+5);
+        time.AdvanceTime(1);
+    }
+
+    public void WorkHighSkill()
+    {
+        if (state.grades < 6)
+        {
+            Debug.Log("Not enough grades for this job.");
+            return;
+        }
+
+        ApplyStatPenaltiesBeforeAction();
+
+        int moneyGain = state.energy < 20 ? 50 : 70;
+
+        state.AddMoney(moneyGain);
+        state.AddEnergy(-14);
+        state.AddStress(+6);
+        time.AdvanceTime(1);
     }
 }
