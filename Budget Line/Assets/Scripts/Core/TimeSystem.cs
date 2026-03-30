@@ -37,6 +37,8 @@ public class TimeSystem : MonoBehaviour
                 day = NextDay(day);
                 totalDaysPassed++;
 
+                Debug.Log("New day reached. Total days passed: " + totalDaysPassed);
+
                 // daily systems tick
                 state.ApplyDailyConsequences();
                 goals.CheckDaily(day);

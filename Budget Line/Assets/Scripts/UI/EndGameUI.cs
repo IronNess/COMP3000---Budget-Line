@@ -20,12 +20,19 @@ public class EndGameUI : MonoBehaviour
     public TMP_Text stressText;
     public TMP_Text gradesText;
 
+    
+
     [SerializeField] private GameState state;
+    [SerializeField] private UniversalPopupUI popupUI;
+    [SerializeField] private GameObject gameplayUIRoot;
 
     private void Awake()
     {
         if (!state)
             state = FindObjectOfType<GameState>();
+
+        if (!popupUI)
+            popupUI = FindObjectOfType<UniversalPopupUI>();
 
         if (panel != null)
             panel.SetActive(false);
@@ -68,7 +75,14 @@ public class EndGameUI : MonoBehaviour
         else
             summary = "Life became overwhelming, and survival was extremely difficult.";
 
-        panel.SetActive(true);
+        if (popupUI != null)
+    popupUI.Hide();
+
+if (gameplayUIRoot != null)
+    gameplayUIRoot.SetActive(false);
+
+panel.SetActive(true);
+panel.transform.SetAsLastSibling();
 
         titleText.text = title;
         summaryText.text = summary;

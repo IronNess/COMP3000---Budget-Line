@@ -7,7 +7,7 @@ public class EndingSystem : MonoBehaviour
     [SerializeField] private UniversalPopupUI popupUI;
     [SerializeField] private EndGameUI endGameUI;
 
-    [SerializeField] private int endDayThreshold = 28;
+    [SerializeField] private int endDayThreshold = 3;
 
     private bool gameEnded = false;
 
@@ -20,7 +20,16 @@ public class EndingSystem : MonoBehaviour
     }
 
     private void Update()
+    
     {
+
+                // Normal ending after enough days
+       if (timeSystem.totalDaysPassed >= endDayThreshold)
+{
+    Debug.Log("ENDING TRIGGERED");
+    ShowEnding();
+    gameEnded = true;
+}
         if (gameEnded || timeSystem == null || state == null || endGameUI == null)
             return;
 
@@ -34,6 +43,8 @@ public class EndingSystem : MonoBehaviour
             return;
         }
 
+        Debug.Log("Threshold = " + endDayThreshold + " | Days = " + timeSystem.totalDaysPassed);
+
         if (state.money < -200)
         {
             ShowGameOver(
@@ -43,7 +54,7 @@ public class EndingSystem : MonoBehaviour
             return;
         }
 
-       if (state.grades <= 10)
+      if (state.grades <= 10 && timeSystem.totalDaysPassed > 5)
 {
     ShowGameOver(
         "Academic Failure",
@@ -52,31 +63,30 @@ public class EndingSystem : MonoBehaviour
     return;
 }
 
-        // Normal ending after enough days
-        if (timeSystem.totalDaysPassed >= endDayThreshold)
-        {
-            ShowEnding();
-            gameEnded = true;
-        }
     }
 
     private void ShowEnding()
-    {
-        if (state.money > 100 && state.stress < 50 && state.grades > 5)
-        {
-            endGameUI.ShowEndScreen("Ending: Stability");
-        }
-        else if (state.money >= 0 && state.stress < 80)
-        {
-            endGameUI.ShowEndScreen("Ending: Survival");
-        }
-        else
-        {
-            endGameUI.ShowEndScreen("Ending: Collapse");
-        }
+{
+    Debug.Log("ShowEnding called");
 
-        gameEnded = true;
+    if (state.money > 100 && state.stress < 50 && state.grades > 5)
+    {
+        Debug.Log("Showing Stability ending");
+        endGameUI.ShowEndScreen("Ending: Stability");
     }
+    else if (state.money >= 0 && state.stress < 80)
+    {
+        Debug.Log("Showing Survival ending");
+        endGameUI.ShowEndScreen("Ending: Survival");
+    }
+    else
+    {
+        Debug.Log("Showing Collapse ending");
+        endGameUI.ShowEndScreen("Ending: Collapse");
+    }
+
+    gameEnded = true;
+}
 
     private void ShowGameOver(string title, string body)
     {
