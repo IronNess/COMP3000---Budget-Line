@@ -5,6 +5,7 @@ public class EndingSystem : MonoBehaviour
     [SerializeField] private GameState state;
     [SerializeField] private TimeSystem timeSystem;
     [SerializeField] private UniversalPopupUI popupUI;
+    [SerializeField] private EndGameUI endGameUI;
 
     [SerializeField] private int endDayThreshold = 28;
 
@@ -15,11 +16,12 @@ public class EndingSystem : MonoBehaviour
         if (!state) state = FindObjectOfType<GameState>();
         if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
         if (!popupUI) popupUI = FindObjectOfType<UniversalPopupUI>();
+        if (!endGameUI) endGameUI = FindObjectOfType<EndGameUI>();
     }
 
     private void Update()
     {
-        if (gameEnded || timeSystem == null || state == null || popupUI == null)
+        if (gameEnded || timeSystem == null || state == null || endGameUI == null)
             return;
 
         // Immediate fail conditions
@@ -41,14 +43,14 @@ public class EndingSystem : MonoBehaviour
             return;
         }
 
-        if (state.grades <= -5)
-        {
-            ShowGameOver(
-                "Academic Failure",
-                "Your academic performance declined too far and you were unable to keep up."
-            );
-            return;
-        }
+       if (state.grades <= 10)
+{
+    ShowGameOver(
+        "Academic Failure",
+        "Your academic performance declined too far and you were unable to keep up."
+    );
+    return;
+}
 
         // Normal ending after enough days
         if (timeSystem.totalDaysPassed >= endDayThreshold)
@@ -62,46 +64,23 @@ public class EndingSystem : MonoBehaviour
     {
         if (state.money > 100 && state.stress < 50 && state.grades > 5)
         {
-            popupUI.Show(
-                "Ending: Stability",
-                "You made difficult sacrifices, but managed to stay financially and emotionally stable.",
-                null,
-                "OK",
-                () => { }
-            );
+            endGameUI.ShowEndScreen("Ending: Stability");
         }
         else if (state.money >= 0 && state.stress < 80)
         {
-            popupUI.Show(
-                "Ending: Survival",
-                "You got through the month, but only just. The pressure never fully disappeared.",
-                null,
-                "OK",
-                () => { }
-            );
+            endGameUI.ShowEndScreen("Ending: Survival");
         }
         else
         {
-            popupUI.Show(
-                "Ending: Collapse",
-                "Debt, stress, and exhaustion became too much to manage. The system pushed back harder than you could recover.",
-                null,
-                "OK",
-                () => { }
-            );
+            endGameUI.ShowEndScreen("Ending: Collapse");
         }
+
+        gameEnded = true;
     }
 
     private void ShowGameOver(string title, string body)
     {
-        popupUI.Show(
-            title,
-            body,
-            null,
-            "OK",
-            () => { }
-        );
-
+        endGameUI.ShowEndScreen(title);
         gameEnded = true;
     }
 }

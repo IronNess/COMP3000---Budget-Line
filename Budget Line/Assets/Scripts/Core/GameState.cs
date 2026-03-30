@@ -99,16 +99,16 @@ public bool burnoutRisk = false;
     }
 
     public void AddGrades(int amount)
-    {
-        grades += amount;
-        OnStatsChanged?.Invoke();
-    }
+{
+    grades = Mathf.Clamp(grades + amount, 0, 100);
+    OnStatsChanged?.Invoke();
+}
 
     public void ApplyTimeBlockDecay()
 {
-    AddEnergy(-5);
-    AddHunger(-4);
-    AddHygiene(-3);
+    AddEnergy(-3);
+    AddHunger(-2);
+    AddHygiene(-1);
 }
 
     /// <summary>
@@ -147,7 +147,7 @@ public bool burnoutRisk = false;
         // Burnout
         if (stress >= 100)
         {
-            energy = Mathf.Clamp(energy - 20, 0, 100);
+            energy = Mathf.Clamp(energy - 15, 0, 100);
             stress = 70;
             OnStatsChanged?.Invoke();
         }
@@ -160,7 +160,7 @@ public bool burnoutRisk = false;
         }
 
         // Grades slowly decline if exhausted or overly stressed
-if (energy <= 20 || stress >= 60)
+if (energy <= 10 || stress >= 80)
 {
     AddGrades(-1);
 }
