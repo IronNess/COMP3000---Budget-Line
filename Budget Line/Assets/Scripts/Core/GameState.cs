@@ -9,7 +9,7 @@ public class GameState : MonoBehaviour
     public int stress = 20;   // 0..100
     public int hunger = 70;   // 0..100
     public int hygiene = 70;  // 0..100
-    public int grades = 0;
+    public int grades = 50;
 
     [Header("Debt / Interest")]
     public int debtInterestPerDay = 5;

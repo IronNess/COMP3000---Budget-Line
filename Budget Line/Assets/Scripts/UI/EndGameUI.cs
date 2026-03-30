@@ -40,6 +40,7 @@ public class EndGameUI : MonoBehaviour
 
     public void ShowEndScreen(string title = "Game Over")
     {
+        Debug.Log("ShowEndScreen called with title: " + title);
         if (state == null || panel == null) return;
 
         int energyScore = state.GetEnergy();
