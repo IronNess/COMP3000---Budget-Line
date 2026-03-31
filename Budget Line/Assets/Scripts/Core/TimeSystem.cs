@@ -1,56 +1,98 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
+/// <summary>
+/// Handles time progression, day progression, and daily system ticks.
+/// 
+/// Caller:
+/// - Gameplay actions call AdvanceTime(...)
+/// 
+/// Why this is better:
+/// - SRP: central place for time progression.
+/// - DRY: daily tick logic is grouped into one method.
+/// - YAGNI: enum-based block progression is enough for this project.
+/// </summary>
 public class TimeSystem : MonoBehaviour
 {
-    public WeekDay day = WeekDay.Mon;
-    public TimeBlock timeBlock = TimeBlock.Morning;
+    [Header("Current Time")]
+    [SerializeField] public WeekDay day = WeekDay.Mon;
+    [SerializeField] public TimeBlock timeBlock = TimeBlock.Morning;
 
     [Header("Progress Tracking")]
-    public int totalDaysPassed = 0;
+    [SerializeField] public int totalDaysPassed = 0;
 
     public event Action OnTimeChanged;
 
+    [Header("References")]
     [SerializeField] private GameState state;
     [SerializeField] private GoalSystem goals;
     [SerializeField] private EventManager events;
+    [SerializeField] private StudentFinanceSystem financeSystem;
 
     private void Awake()
     {
-        if (!state) state = FindObjectOfType<GameState>();
-        if (!goals) goals = FindObjectOfType<GoalSystem>();
-        if (!events) events = FindObjectOfType<EventManager>();
+        ResolveReferences();
     }
 
+    private void ResolveReferences()
+    {
+        if (state == null) state = FindObjectOfType<GameState>();
+        if (goals == null) goals = FindObjectOfType<GoalSystem>();
+        if (events == null) events = FindObjectOfType<EventManager>();
+        if (financeSystem == null) financeSystem = FindObjectOfType<StudentFinanceSystem>();
+    }
+
+    /// <summary>
+    /// Advances time by the given number of blocks.
+    /// This is called by actions such as sleeping, working, studying, etc.
+    /// </summary>
     public void AdvanceTime(int blocks)
     {
+        if (blocks <= 0) return;
+        if (state == null) return;
+
         for (int i = 0; i < blocks; i++)
         {
-            // every block = passive stat decay
-            state.ApplyTimeBlockDecay();
-
-            timeBlock = NextBlock(timeBlock);
-
-            // wrap to next day
-            if (timeBlock == TimeBlock.Morning)
-            {
-                day = NextDay(day);
-                totalDaysPassed++;
-
-                Debug.Log("New day reached. Total days passed: " + totalDaysPassed);
-
-                // daily systems tick
-                state.ApplyDailyConsequences();
-                goals.CheckDaily(day);
-                events.TryTriggerDailyEvent();
-                FindObjectOfType<StudentFinanceSystem>()?.OnNewDay();
-            }
+            AdvanceSingleBlock();
         }
 
         OnTimeChanged?.Invoke();
     }
 
-    private TimeBlock NextBlock(TimeBlock current)
+    /// <summary>
+    /// Handles the logic for one time block passing.
+    /// DRY: keeps repeated progression logic out of AdvanceTime().
+    /// </summary>
+    private void AdvanceSingleBlock()
+    {
+        state.ApplyTimeBlockDecay();
+        timeBlock = GetNextTimeBlock(timeBlock);
+
+        if (timeBlock == TimeBlock.Morning)
+        {
+            AdvanceToNextDay();
+        }
+    }
+
+    private void AdvanceToNextDay()
+    {
+        day = GetNextDay(day);
+        totalDaysPassed++;
+
+        Debug.Log("New day reached. Total days passed: " + totalDaysPassed);
+
+        RunDailySystems();
+    }
+
+    private void RunDailySystems()
+    {
+        state?.ApplyDailyConsequences();
+        goals?.CheckDaily(day);
+        events?.TryTriggerDailyEvent();
+        financeSystem?.OnNewDay();
+    }
+
+    private TimeBlock GetNextTimeBlock(TimeBlock current)
     {
         return current switch
         {
@@ -61,7 +103,7 @@ public class TimeSystem : MonoBehaviour
         };
     }
 
-    private WeekDay NextDay(WeekDay current)
+    private WeekDay GetNextDay(WeekDay current)
     {
         return current switch
         {

@@ -1,51 +1,79 @@
 using UnityEngine;
 
+/// <summary>
+/// Handles recurring student finance logic such as:
+/// - initial loan payment
+/// - monthly loan payment
+/// - rent countdown
+/// - rent payment / missed rent
+/// 
+/// Why this is better:
+/// - SRP: finance and rent timing are grouped here only.
+/// - DRY: shared helper methods avoid repeated loan/rent update logic.
+/// - YAGNI: no unnecessary banking/account system is introduced.
+/// </summary>
 public class StudentFinanceSystem : MonoBehaviour
 {
     [Header("Finance")]
-    public int monthlyLoanIncome = 750;
-    public int monthlyRent = 480;
+    [SerializeField] private int monthlyLoanIncome = 750;
+    [SerializeField] public int monthlyRent = 480;
 
     [Header("Calendar")]
-    public int daysPerMonth = 28;
+    [SerializeField] private int daysPerMonth = 28;
 
     [Header("Current Cycle")]
     [SerializeField] private int totalDaysPassed = 0;
     [SerializeField] private int daysUntilRentDue = 4; // Monday start -> Friday due
 
+    [Header("References")]
     [SerializeField] private GameState state;
 
     private void Awake()
     {
-        if (!state) state = FindObjectOfType<GameState>();
-
-        // Give the player their loan at the start of the game
-        if (state != null)
+        if (state == null)
         {
-            state.AddMoney(monthlyLoanIncome);
-            Debug.Log($"Student loan received: +£{monthlyLoanIncome}");
+            state = FindObjectOfType<GameState>();
         }
+
+        GiveInitialLoan();
     }
 
+    private void GiveInitialLoan()
+    {
+        if (state == null) return;
+
+        state.AddMoney(monthlyLoanIncome);
+        Debug.Log($"Student loan received: +£{monthlyLoanIncome}");
+    }
+
+    /// <summary>
+    /// Called once per new day by TimeSystem.
+    /// </summary>
     public void OnNewDay()
     {
         totalDaysPassed++;
+        UpdateRentCountdown();
+        TryGiveMonthlyLoan();
+    }
+
+    private void UpdateRentCountdown()
+    {
         daysUntilRentDue--;
 
-        // After rent day passes, reset countdown for next monthly cycle
         if (daysUntilRentDue < 0)
         {
             daysUntilRentDue = daysPerMonth - 1;
         }
+    }
 
-        // Give the next student loan every month
+    private void TryGiveMonthlyLoan()
+    {
+        if (state == null) return;
+
         if (totalDaysPassed > 0 && totalDaysPassed % daysPerMonth == 0)
         {
-            if (state != null)
-            {
-                state.AddMoney(monthlyLoanIncome);
-                Debug.Log($"New monthly student loan received: +£{monthlyLoanIncome}");
-            }
+            state.AddMoney(monthlyLoanIncome);
+            Debug.Log($"New monthly student loan received: +£{monthlyLoanIncome}");
         }
     }
 
@@ -63,7 +91,7 @@ public class StudentFinanceSystem : MonoBehaviour
 
     public bool CanAffordRent()
     {
-        return state != null && state.money >= monthlyRent;
+        return state != null && state.GetMoney() >= monthlyRent;
     }
 
     public void PayRent()

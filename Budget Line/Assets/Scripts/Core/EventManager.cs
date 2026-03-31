@@ -1,37 +1,66 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
+/// <summary>
+/// Manages random events triggered daily or after player actions.
+/// 
+/// Caller:
+/// - TimeSystem calls TryTriggerDailyEvent()
+/// - Other gameplay actions can call TryTriggerActionEvent()
+/// 
+/// Why this is better:
+/// - SRP: this class only decides whether and which event should trigger.
+/// - DRY: both public trigger methods reuse shared internal logic.
+/// - YAGNI: keeps a simple random pool rather than a large weighted event system.
+/// </summary>
 public class EventManager : MonoBehaviour
 {
-    [Range(0f, 1f)] public float dailyEventChance = 0.35f; // Event probabilities
-    [Range(0f, 1f)] public float actionEventChance = 0.25f;
+    [Header("Event Chances")]
+    [Range(0f, 1f)] [SerializeField] private float dailyEventChance = 0.35f;
+    [Range(0f, 1f)] [SerializeField] private float actionEventChance = 0.25f;
 
-    public List<EventData> eventPool = new List<EventData>(); // Event pool
+    [Header("Event Pool")]
+    [SerializeField] private List<EventData> eventPool = new List<EventData>();
 
-    [SerializeField] private EventUI eventUI; // UI reference 
+    [Header("UI")]
+    [SerializeField] private EventUI eventUI;
 
     private void Awake()
     {
-        if (!eventUI) eventUI = FindObjectOfType<EventUI>();
+        if (eventUI == null)
+        {
+            eventUI = FindObjectOfType<EventUI>();
+        }
     }
 
-    public void TryTriggerDailyEvent() // Trigger dailyt events
+    public void TryTriggerDailyEvent()
     {
-        if (eventPool.Count == 0) return;
-        if (Random.value <= dailyEventChance)
-            TriggerRandomEvent();
+        TryTriggerEvent(dailyEventChance);
     }
 
-    public void TryTriggerActionEvent() // Triggering action-based events
+    public void TryTriggerActionEvent()
     {
-        if (eventPool.Count == 0) return;
-        if (Random.value <= actionEventChance)
+        TryTriggerEvent(actionEventChance);
+    }
+
+    /// <summary>
+    /// Shared event trigger logic.
+    /// DRY: both daily and action-based events reuse this method.
+    /// </summary>
+    private void TryTriggerEvent(float chance)
+    {
+        if (eventPool == null || eventPool.Count == 0) return;
+        if (eventUI == null) return;
+
+        if (Random.value <= chance)
+        {
             TriggerRandomEvent();
+        }
     }
 
     private void TriggerRandomEvent()
     {
-        var e = eventPool[Random.Range(0, eventPool.Count)];
-        eventUI.Show(e);
+        EventData chosenEvent = eventPool[Random.Range(0, eventPool.Count)];
+        eventUI.Show(chosenEvent);
     }
 }

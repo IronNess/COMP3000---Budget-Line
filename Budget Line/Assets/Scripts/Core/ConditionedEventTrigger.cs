@@ -1,28 +1,43 @@
 using UnityEngine;
 
+/// <summary>
+/// Triggers context-sensitive events based on player state and recent progress.
+/// 
+/// Examples:
+/// - low hygiene can lead to dentist events
+/// - heavy study load can lead to broken laptop events
+/// - low money can increase equipment/fine-related events
+/// 
+/// Why this is better:
+/// - SRP: only handles condition-based event triggering.
+/// - DRY: event choice and chance logic are split into helpers.
+/// - YAGNI: still uses simple threshold rules rather than a large event-rule system.
+/// </summary>
 public class ConditionedEventTrigger : MonoBehaviour
 {
-    [Header("Event Assets (EventData .asset)")]
-    public EventData brokenLaptop;
-    public EventData dentistCost;
-    public EventData libraryFine;
-    public EventData academicEquipment;
+    [Header("Event Assets")]
+    [SerializeField] private EventData brokenLaptop;
+    [SerializeField] private EventData dentistCost;
+    [SerializeField] private EventData libraryFine;
+    [SerializeField] private EventData academicEquipment;
 
-    [Header("How often can a conditioned event happen?")]
-    public int minDaysBetweenEvents = 2;
+    [Header("Trigger Timing")]
+    [SerializeField] private int minDaysBetweenEvents = 2;
     private int daysSinceLast = 999;
 
-    [Header("Condition thresholds")]
-    public int lowHygieneThreshold = 25;      // dentist more likely below this
-    public int highStudyThreshold = 4;        // laptop more likely above this
-    public int lowMoneyThreshold = 20;        // equipment/fine more likely below this
+    [Header("Condition Thresholds")]
+    [SerializeField] private int lowHygieneThreshold = 25;
+    [SerializeField] private int highStudyThreshold = 4;
+    [SerializeField] private int lowMoneyThreshold = 20;
 
-    [Header("Base chances")]
-    [Range(0f, 1f)] public float baseChancePerDay = 0.05f;
-    [Range(0f, 1f)] public float hygieneBonusChance = 0.12f;
-    [Range(0f, 1f)] public float studyBonusChance = 0.10f;
-    [Range(0f, 1f)] public float lowMoneyBonusChance = 0.08f;
+    [Header("Base Chances")]
+    [Range(0f, 1f)] [SerializeField] private float baseChancePerDay = 0.05f;
+    [Range(0f, 1f)] [SerializeField] private float hygieneBonusChance = 0.12f;
+    [Range(0f, 1f)] [SerializeField] private float studyBonusChance = 0.10f;
+    [Range(0f, 1f)] [SerializeField] private float lowMoneyBonusChance = 0.08f;
+    [Range(0f, 1f)] [SerializeField] private float missedDeadlineBonusChance = 0.10f;
 
+    [Header("References")]
     [SerializeField] private GameState state;
     [SerializeField] private TimeSystem timeSystem;
     [SerializeField] private GoalSystem goals;
@@ -32,17 +47,18 @@ public class ConditionedEventTrigger : MonoBehaviour
 
     private void Awake()
     {
-        if (!state) state = FindObjectOfType<GameState>();
-        if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
-        if (!goals) goals = FindObjectOfType<GoalSystem>();
-        if (!eventUI) eventUI = FindObjectOfType<EventUI>();
+        ResolveReferences();
 
-        lastDay = timeSystem.day;
+        if (timeSystem != null)
+        {
+            lastDay = timeSystem.day;
+        }
     }
 
     private void Update()
     {
-        // detect day change
+        if (timeSystem == null) return;
+
         if (timeSystem.day != lastDay)
         {
             lastDay = timeSystem.day;
@@ -51,48 +67,86 @@ public class ConditionedEventTrigger : MonoBehaviour
         }
     }
 
+    private void ResolveReferences()
+    {
+        if (state == null) state = FindObjectOfType<GameState>();
+        if (timeSystem == null) timeSystem = FindObjectOfType<TimeSystem>();
+        if (goals == null) goals = FindObjectOfType<GoalSystem>();
+        if (eventUI == null) eventUI = FindObjectOfType<EventUI>();
+    }
+
     private void TryTrigger()
     {
-        if (daysSinceLast < minDaysBetweenEvents) return;
+        if (!CanTriggerToday()) return;
 
-        float chance = baseChancePerDay;
-
-        bool lowHygiene = state.hygiene <= lowHygieneThreshold;
-        bool highStudy = goals.tasksCompletedThisWeek >= highStudyThreshold;
-        bool lowMoney = state.money <= lowMoneyThreshold;
-        bool missedDeadline = goals.MissedDeadlineThisWeek; 
-
-        if (lowHygiene) chance += hygieneBonusChance;
-        if (highStudy) chance += studyBonusChance;
-        if (lowMoney) chance += lowMoneyBonusChance;
-
-        // missing deadlines increases chance of fine
-        if (missedDeadline) chance += 0.10f;
-
+        float chance = CalculateTriggerChance();
         if (Random.value > chance) return;
 
-        // pick the best matching event
-        EventData chosen = null;
+        EventData chosenEvent = ChooseEvent();
+        if (chosenEvent == null || eventUI == null) return;
 
-        if (lowHygiene && dentistCost != null)
-            chosen = dentistCost;
-        else if (highStudy && brokenLaptop != null)
-            chosen = brokenLaptop;
-        else if (missedDeadline && libraryFine != null)
-            chosen = libraryFine;
-        else
-        {
-            // fallback: equipment if low money or just random
-            float r = Random.value;
-            if (lowMoney && academicEquipment != null) chosen = academicEquipment;
-            else if (r < 0.5f && academicEquipment != null) chosen = academicEquipment;
-            else if (libraryFine != null) chosen = libraryFine;
-        }
+        daysSinceLast = 0;
+        eventUI.Show(chosenEvent);
+    }
 
-        if (chosen != null)
-        {
-            daysSinceLast = 0;
-            eventUI.Show(chosen);
-        }
+    private bool CanTriggerToday()
+    {
+        return daysSinceLast >= minDaysBetweenEvents &&
+               state != null &&
+               goals != null;
+    }
+
+    private float CalculateTriggerChance()
+    {
+        float chance = baseChancePerDay;
+
+        if (IsLowHygiene()) chance += hygieneBonusChance;
+        if (IsHeavyStudyLoad()) chance += studyBonusChance;
+        if (IsLowMoney()) chance += lowMoneyBonusChance;
+        if (goals.MissedDeadlineThisWeek) chance += missedDeadlineBonusChance;
+
+        return chance;
+    }
+
+    private EventData ChooseEvent()
+    {
+        if (IsLowHygiene() && dentistCost != null)
+            return dentistCost;
+
+        if (IsHeavyStudyLoad() && brokenLaptop != null)
+            return brokenLaptop;
+
+        if (goals.MissedDeadlineThisWeek && libraryFine != null)
+            return libraryFine;
+
+        return ChooseFallbackEvent();
+    }
+
+    private EventData ChooseFallbackEvent()
+    {
+        float randomValue = Random.value;
+
+        if (IsLowMoney() && academicEquipment != null)
+            return academicEquipment;
+
+        if (randomValue < 0.5f && academicEquipment != null)
+            return academicEquipment;
+
+        return libraryFine;
+    }
+
+    private bool IsLowHygiene()
+    {
+        return state.GetHygiene() <= lowHygieneThreshold;
+    }
+
+    private bool IsHeavyStudyLoad()
+    {
+        return goals.tasksCompletedThisWeek >= highStudyThreshold;
+    }
+
+    private bool IsLowMoney()
+    {
+        return state.GetMoney() <= lowMoneyThreshold;
     }
 }

@@ -1,7 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// Shows time-based daily prompts, especially rent reminders and rent-due prompts.
+/// 
+/// Caller:
+/// - Unity lifecycle (Start / Update)
+/// - Uses TimeSystem and StudentFinanceSystem state
+/// 
+/// Why this is better:
+/// - SRP: only handles daily reminder UI.
+/// - DRY: reminder display logic is split into small focused methods.
+/// - YAGNI: no overbuilt scheduling framework is introduced.
+/// </summary>
 public class DailyScheduleSystem : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private TimeSystem timeSystem;
     [SerializeField] private UniversalPopupUI eventUI;
     [SerializeField] private StudentFinanceSystem financeSystem;
@@ -10,18 +23,18 @@ public class DailyScheduleSystem : MonoBehaviour
 
     private void Awake()
     {
-        if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
-        if (!eventUI) eventUI = FindObjectOfType<UniversalPopupUI>();
-        if (!financeSystem) financeSystem = FindObjectOfType<StudentFinanceSystem>();
+        ResolveReferences();
 
         if (timeSystem != null)
+        {
             lastDayShown = timeSystem.day;
+        }
     }
 
     private void Start()
     {
-        // Show the first reminder immediately when the game begins
-        if (timeSystem != null && timeSystem.day == WeekDay.Mon && timeSystem.timeBlock == TimeBlock.Morning)
+        // Show the first reminder immediately if the game begins on Monday morning.
+        if (IsCurrentMorning(WeekDay.Mon))
         {
             ShowMorningPrompt();
         }
@@ -31,13 +44,31 @@ public class DailyScheduleSystem : MonoBehaviour
     {
         if (timeSystem == null || financeSystem == null) return;
 
-        // Detect a new morning/day
-        if (timeSystem.day != lastDayShown && timeSystem.timeBlock == TimeBlock.Morning)
-{
-    lastDayShown = timeSystem.day;
-    ShowMorningPrompt();
-
+        if (IsNewMorning())
+        {
+            lastDayShown = timeSystem.day;
+            ShowMorningPrompt();
         }
+    }
+
+    private void ResolveReferences()
+    {
+        if (timeSystem == null) timeSystem = FindObjectOfType<TimeSystem>();
+        if (eventUI == null) eventUI = FindObjectOfType<UniversalPopupUI>();
+        if (financeSystem == null) financeSystem = FindObjectOfType<StudentFinanceSystem>();
+    }
+
+    private bool IsCurrentMorning(WeekDay expectedDay)
+    {
+        return timeSystem != null &&
+               timeSystem.day == expectedDay &&
+               timeSystem.timeBlock == TimeBlock.Morning;
+    }
+
+    private bool IsNewMorning()
+    {
+        return timeSystem.day != lastDayShown &&
+               timeSystem.timeBlock == TimeBlock.Morning;
     }
 
     private void ShowMorningPrompt()
@@ -46,14 +77,12 @@ public class DailyScheduleSystem : MonoBehaviour
 
         int daysLeft = financeSystem.GetDaysUntilRentDue();
 
-        // Rent due today
         if (financeSystem.IsRentDueToday(timeSystem))
         {
             ShowRentPrompt();
             return;
         }
 
-        // Reminder popups
         if (daysLeft == 4 || daysLeft == 2 || daysLeft == 1)
         {
             ShowRentReminder(daysLeft);
@@ -61,19 +90,19 @@ public class DailyScheduleSystem : MonoBehaviour
     }
 
     private void ShowRentReminder(int daysLeft)
-{
-    if (eventUI == null) return;
+    {
+        if (eventUI == null) return;
 
-    string dayText = daysLeft == 1 ? "day" : "days";
+        string dayText = daysLeft == 1 ? "day" : "days";
 
-    eventUI.Show(
-        "Rent Reminder",
-        $"Your monthly rent is due in {daysLeft} {dayText}.",
-        null,
-        "OK",
-        () => { }
-    );
-}
+        eventUI.Show(
+            "Rent Reminder",
+            $"Your monthly rent is due in {daysLeft} {dayText}.",
+            null,
+            "OK",
+            () => { }
+        );
+    }
 
     private void ShowRentPrompt()
     {
@@ -84,15 +113,9 @@ public class DailyScheduleSystem : MonoBehaviour
             $"Your monthly rent of £{financeSystem.monthlyRent} is due today.",
             null,
             "Pay Rent",
-            () =>
-            {
-                financeSystem.PayRent();
-            },
+            financeSystem.PayRent,
             "Do Not Pay",
-            () =>
-            {
-                financeSystem.MissRent();
-            }
+            financeSystem.MissRent
         );
     }
 }
