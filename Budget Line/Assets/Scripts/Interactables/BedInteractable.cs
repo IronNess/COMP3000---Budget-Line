@@ -1,31 +1,49 @@
 using UnityEngine;
 
+/// <summary>
+/// Bed interaction:
+/// restores energy, reduces stress, costs hunger, and advances time.
+/// 
+/// Caller:
+/// ClickableInteractable calls Interact() through IInteractable.
+/// 
+/// Why this is better:
+/// - SRP: this class only defines the bed action.
+/// - DRY: dependency resolution is centralised in ResolveReferences().
+/// - YAGNI: no unnecessary abstraction beyond what this interactable needs.
+/// </summary>
 public class BedInteractable : MonoBehaviour, IInteractable
 {
     public string Prompt => "Sleep (+Energy, -Stress, time passes, -Hunger)";
 
+    [Header("Bed Effects")]
+    [SerializeField] private int energyGain = 35;
+    [SerializeField] private int stressReduction = 10;
+    [SerializeField] private int hungerCost = 10;
+    [SerializeField] private int timeCost = 2;
+
+    [Header("References")]
     [SerializeField] private GameState state;
     [SerializeField] private TimeSystem timeSystem;
 
     private void Awake()
     {
-        if (!state) state = FindObjectOfType<GameState>();
-        if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
+        ResolveReferences();
+    }
+
+    private void ResolveReferences()
+    {
+        if (state == null) state = FindObjectOfType<GameState>();
+        if (timeSystem == null) timeSystem = FindObjectOfType<TimeSystem>();
     }
 
     public void Interact()
     {
-        state.AddEnergy(+35);
-        state.AddStress(-10);
-        state.AddHunger(-10); // cost
-        timeSystem.AdvanceTime(2);
-    }
-}
+        if (state == null || timeSystem == null) return;
 
-public class ClickDebug : MonoBehaviour
-{
-    private void OnMouseDown()
-    {
-        Debug.Log("Bed clicked");
+        state.AddEnergy(energyGain);
+        state.AddStress(-stressReduction);
+        state.AddHunger(-hungerCost);
+        timeSystem.AdvanceTime(timeCost);
     }
 }

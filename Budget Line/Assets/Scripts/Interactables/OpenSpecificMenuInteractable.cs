@@ -1,5 +1,13 @@
 using UnityEngine;
 
+/// <summary>
+/// Opens one specific menu from the MenuController.
+/// 
+/// Why this is better:
+/// - SRP: only routes to the chosen menu.
+/// - DRY: switch is delegated to one helper method.
+/// - YAGNI: enum + switch is enough here; no need for a larger menu-command system.
+/// </summary>
 public class OpenSpecificMenuInteractable : MonoBehaviour, IInteractable
 {
     public enum MenuType
@@ -11,14 +19,14 @@ public class OpenSpecificMenuInteractable : MonoBehaviour, IInteractable
         Work
     }
 
+    public string Prompt => "Open Menu";
+
     [SerializeField] private MenuController menuController;
     [SerializeField] private MenuType menuType;
 
-    public string Prompt => "Open Menu";
-
     private void Awake()
     {
-        if (!menuController)
+        if (menuController == null)
             menuController = FindObjectOfType<MenuController>();
     }
 
@@ -30,6 +38,11 @@ public class OpenSpecificMenuInteractable : MonoBehaviour, IInteractable
             return;
         }
 
+        OpenConfiguredMenu();
+    }
+
+    private void OpenConfiguredMenu()
+    {
         switch (menuType)
         {
             case MenuType.Travel:

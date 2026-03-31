@@ -1,16 +1,30 @@
 using UnityEngine;
 
+/// <summary>
+/// Desk interaction:
+/// allows the player to study or organise tasks.
+/// 
+/// Caller:
+/// ClickableInteractable -> IInteractable.Interact()
+///
+/// Why this is better:
+/// - SRP: the desk only handles desk-related actions.
+/// - DRY: study calculations are grouped into helper methods.
+/// - YAGNI: no overengineered task system; still uses simple rules.
+/// </summary>
 public class DeskInteractable : MonoBehaviour, IInteractable
 {
     public string Prompt => "Use Desk";
 
+    [Header("UI")]
     [SerializeField] private InteractionChoiceUI choiceUI;
 
-    [Header("Soft locks")]
-    public int minEnergyToStudy = 15;
-    public int lowHungerThreshold = 20;
-    public int lowHygieneThreshold = 20;
+    [Header("Soft Locks")]
+    [SerializeField] private int minEnergyToStudy = 15;
+    [SerializeField] private int lowHungerThreshold = 20;
+    [SerializeField] private int lowHygieneThreshold = 20;
 
+    [Header("References")]
     [SerializeField] private GameState state;
     [SerializeField] private TimeSystem timeSystem;
     [SerializeField] private GoalSystem goals;
@@ -18,22 +32,24 @@ public class DeskInteractable : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        if (!state) state = FindObjectOfType<GameState>();
-        if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
-        if (!goals) goals = FindObjectOfType<GoalSystem>();
-        if (!events) events = FindObjectOfType<EventManager>();
+        ResolveReferences();
+    }
+
+    private void ResolveReferences()
+    {
+        if (choiceUI == null) choiceUI = FindObjectOfType<InteractionChoiceUI>();
+        if (state == null) state = FindObjectOfType<GameState>();
+        if (timeSystem == null) timeSystem = FindObjectOfType<TimeSystem>();
+        if (goals == null) goals = FindObjectOfType<GoalSystem>();
+        if (events == null) events = FindObjectOfType<EventManager>();
     }
 
     public void Interact()
     {
-        if (!choiceUI)
-        {
-            Debug.LogError("DeskInteractable: choiceUI not assigned in Inspector.");
+        if (choiceUI == null || state == null || timeSystem == null || goals == null)
             return;
-        }
 
-        // Soft lock: too tired to study
-        if (state.energy < minEnergyToStudy)
+        if (state.GetEnergy() < minEnergyToStudy)
         {
             choiceUI.Show("Too Tired", "You are too exhausted to focus right now.");
             return;
@@ -49,25 +65,11 @@ public class DeskInteractable : MonoBehaviour, IInteractable
 
     private void Study()
     {
-        // Base study costs
-        int energyCost = Mathf.RoundToInt(-15 / state.studyEfficiency);
-        int stressChange = -7;
-        int timeCost = 1;
-        int gradeGain = 1;
+        int energyCost = CalculateStudyEnergyCost();
+        int stressChange = CalculateStudyStressChange();
+        int gradeGain = CalculateStudyGradeGain();
+        int timeCost = CalculateStudyTimeCost();
 
-        // Ongoing problem: broken laptop makes studying slower + less effective
-        if (state.laptopBroken)
-        {
-            timeCost = 2;
-            gradeGain = 0; // or keep 1 but make it harder — up to you
-            stressChange = +2;
-        }
-
-        // Soft lock penalties (planning pressure)
-        if (state.hunger < lowHungerThreshold) gradeGain -= 1;     // worse grades when hungry
-        if (state.hygiene < lowHygieneThreshold) stressChange += 2; // distracted/embarrassed
-
-        // Apply
         state.AddGrades(gradeGain);
         state.AddStress(stressChange);
         state.AddEnergy(energyCost);
@@ -76,12 +78,48 @@ public class DeskInteractable : MonoBehaviour, IInteractable
         state.ImproveStudyEfficiency();
 
         timeSystem.AdvanceTime(timeCost);
-        events.TryTriggerActionEvent();
+        events?.TryTriggerActionEvent();
+    }
+
+    private int CalculateStudyEnergyCost()
+    {
+        // studyEfficiency reduces the energy loss from studying
+        return Mathf.RoundToInt(-15 / state.studyEfficiency);
+    }
+
+    private int CalculateStudyStressChange()
+    {
+        int stressChange = -7;
+
+        if (state.laptopBroken)
+            stressChange = 2;
+
+        if (state.GetHygiene() < lowHygieneThreshold)
+            stressChange += 2;
+
+        return stressChange;
+    }
+
+    private int CalculateStudyGradeGain()
+    {
+        int gradeGain = 1;
+
+        if (state.laptopBroken)
+            gradeGain = 0;
+
+        if (state.GetHunger() < lowHungerThreshold)
+            gradeGain -= 1;
+
+        return gradeGain;
+    }
+
+    private int CalculateStudyTimeCost()
+    {
+        return state.laptopBroken ? 2 : 1;
     }
 
     private void OrganiseTasks()
     {
-        // Organising reduces stress but still takes time
         state.AddStress(-5);
         timeSystem.AdvanceTime(1);
     }
