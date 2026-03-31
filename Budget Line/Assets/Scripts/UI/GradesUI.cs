@@ -1,45 +1,45 @@
+// GradesUI.cs
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Updates a grade label when stats change.
+/// 
+/// - DRY: uses GradeUtility instead of repeating grade rules.
+/// - SRP: this class only updates one UI label.
+/// </summary>
 public class GradesUI : MonoBehaviour
 {
-    public GameState state;
-    public TextMeshProUGUI label;
+    [SerializeField] private GameState state;
+    [SerializeField] private TextMeshProUGUI label;
 
-    private void Start()
+    private void Awake()
     {
-        if (!state)
-            state = FindObjectOfType<GameState>();
+        if (state == null) state = FindObjectOfType<GameState>();
+    }
 
+    private void OnEnable()
+    {
         if (state != null)
+        {
             state.OnStatsChanged += UpdateGrades;
+        }
 
         UpdateGrades();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (state != null)
+        {
             state.OnStatsChanged -= UpdateGrades;
+        }
     }
 
     private void UpdateGrades()
     {
         if (label == null || state == null) return;
 
-        int score = state.GetGrades();
-
-        string grade;
-
-        if (score >= 80)
-            grade = "A";
-        else if (score >= 60)
-            grade = "B";
-        else if (score >= 40)
-            grade = "C";
-        else
-            grade = "D";
-
-        label.text = "Grade: " + grade;
+        label.text = "Grade: " + GradeUtility.ToLetter(state.GetGrades());
     }
 }

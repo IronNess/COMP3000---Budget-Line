@@ -1,8 +1,17 @@
+// StressIconUI.cs
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Swaps the stress icon sprite depending on stress/energy.
+/// 
+
+/// - SRP: only controls the icon.
+/// - DRY: one helper method decides whether the stressed state should show.
+/// </summary>
 public class StressIconUI : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private GameState state;
     [SerializeField] private Image iconImage;
 
@@ -13,37 +22,39 @@ public class StressIconUI : MonoBehaviour
     [Header("Threshold")]
     [SerializeField] private int stressedThreshold = 50;
 
-    private void Start()
+    private void Awake()
     {
-        if (!state)
-            state = FindObjectOfType<GameState>();
+        if (state == null) state = FindObjectOfType<GameState>();
+        if (iconImage == null) iconImage = GetComponent<Image>();
+    }
 
-        if (!iconImage)
-            iconImage = GetComponent<Image>();
-
+    private void OnEnable()
+    {
         if (state != null)
+        {
             state.OnStatsChanged += UpdateStressIcon;
+        }
 
         UpdateStressIcon();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (state != null)
+        {
             state.OnStatsChanged -= UpdateStressIcon;
+        }
     }
 
     private void UpdateStressIcon()
     {
         if (state == null || iconImage == null) return;
 
-        int stress = state.GetStress();
-        int energy = state.GetEnergy();
+        iconImage.sprite = ShouldShowStressedIcon() ? stressedSprite : happySprite;
+    }
 
-        // Show stressed icon if stress is high OR energy is completely empty
-        if (stress >= stressedThreshold || energy <= 0)
-            iconImage.sprite = stressedSprite;
-        else
-            iconImage.sprite = happySprite;
+    private bool ShouldShowStressedIcon()
+    {
+        return state.GetStress() >= stressedThreshold || state.GetEnergy() <= 0;
     }
 }

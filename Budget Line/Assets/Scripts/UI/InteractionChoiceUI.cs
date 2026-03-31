@@ -1,47 +1,84 @@
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
+// InteractionChoiceUI.cs
 using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
+/// <summary>
+/// Small reusable choice popup used by interactable objects.
+/// 
+/// Caller:
+/// Other interactable scripts call Show(...) and pass button choices.
+/// 
+
+/// - SRP: only handles displaying and wiring choices.
+/// - DRY: button setup is delegated to a helper method.
+/// - Important bug fix: avoids capturing the loop variable incorrectly.
+/// </summary>
 public class InteractionChoiceUI : MonoBehaviour
 {
-    public GameObject panel;
-    public TMP_Text title;
-    public TMP_Text body;
-    public Button[] buttons;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private TMP_Text title;
+    [SerializeField] private TMP_Text body;
+    [SerializeField] private Button[] buttons;
 
-    public void Show(string t, string b, params InteractionChoice[] choices)
+    public void Show(string popupTitle, string popupBody, params InteractionChoice[] choices)
     {
+        if (panel == null || title == null || body == null || buttons == null) return;
+
         panel.SetActive(true);
-        title.text = t;
-        body.text = b;
+        title.text = popupTitle;
+        body.text = popupBody;
 
         for (int i = 0; i < buttons.Length; i++)
         {
             if (i < choices.Length)
             {
-                buttons[i].gameObject.SetActive(true);
-                buttons[i].GetComponentInChildren<TMP_Text>().text = choices[i].label;
-                buttons[i].onClick.RemoveAllListeners();
-                buttons[i].onClick.AddListener(() =>
-                {
-                    choices[i].action();
-                    panel.SetActive(false);
-                });
+                ConfigureButton(buttons[i], choices[i]);
             }
-            else buttons[i].gameObject.SetActive(false);
+            else
+            {
+                buttons[i].gameObject.SetActive(false);
+            }
         }
+    }
+
+    private void ConfigureButton(Button button, InteractionChoice choice)
+    {
+        if (button == null || choice == null) return;
+
+        TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
+
+        button.gameObject.SetActive(true);
+        if (buttonText != null)
+        {
+            buttonText.text = choice.label;
+        }
+
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(() =>
+        {
+            choice.action?.Invoke();
+            if (panel != null)
+            {
+                panel.SetActive(false);
+            }
+        });
     }
 }
 
+/// <summary>
+/// Lightweight data object passed into InteractionChoiceUI.
+/// YAGNI: only stores the two pieces of data the current UI needs.
+/// </summary>
 public class InteractionChoice
 {
     public string label;
     public Action action;
 
-    public InteractionChoice(string l, Action a)
+    public InteractionChoice(string label, Action action)
     {
-        label = l;
-        action = a;
+        this.label = label;
+        this.action = action;
     }
 }

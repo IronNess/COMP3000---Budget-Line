@@ -1,11 +1,20 @@
+// StatBarUI.cs  (class name left unchanged from your current script)
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Displays one numeric stat value.
+/// 
+/// Caller:
+/// The Inspector chooses which stat this instance represents.
+/// 
+
+/// - SRP: this class only formats one stat number.
+/// - DRY: one shared method handles all stat types.
+/// - YAGNI: keeps enum-based logic instead of introducing unnecessary abstractions.
+/// </summary>
 public class StatNumberUI : MonoBehaviour
 {
-    public GameState state;
-    public TextMeshProUGUI label;
-
     public enum StatType
     {
         Energy,
@@ -14,49 +23,52 @@ public class StatNumberUI : MonoBehaviour
         Stress
     }
 
-    public StatType statType;
-    public string prefix = "";
-    public string suffix = "";
+    [SerializeField] private GameState state;
+    [SerializeField] private TextMeshProUGUI label;
+    [SerializeField] private StatType statType;
+    [SerializeField] private string prefix = "";
+    [SerializeField] private string suffix = "";
 
-    private void Start()
+    private void Awake()
     {
-        if (!state)
-            state = FindObjectOfType<GameState>();
+        if (state == null) state = FindObjectOfType<GameState>();
+    }
 
+    private void OnEnable()
+    {
         if (state != null)
+        {
             state.OnStatsChanged += UpdateNumber;
+        }
 
         UpdateNumber();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (state != null)
+        {
             state.OnStatsChanged -= UpdateNumber;
+        }
     }
 
     private void UpdateNumber()
     {
         if (label == null || state == null) return;
 
-        int value = 0;
+        int value = GetSelectedStatValue();
+        label.text = prefix + value + suffix;
+    }
 
+    private int GetSelectedStatValue()
+    {
         switch (statType)
         {
-            case StatType.Energy:
-                value = state.GetEnergy();
-                break;
-            case StatType.Hunger:
-                value = state.GetHunger();
-                break;
-            case StatType.Hygiene:
-                value = state.GetHygiene();
-                break;
-            case StatType.Stress:
-                value = state.GetStress();
-                break;
+            case StatType.Energy: return state.GetEnergy();
+            case StatType.Hunger: return state.GetHunger();
+            case StatType.Hygiene: return state.GetHygiene();
+            case StatType.Stress: return state.GetStress();
+            default: return 0;
         }
-
-        label.text = prefix + value.ToString() + suffix;
     }
 }

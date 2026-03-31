@@ -1,48 +1,84 @@
+// UIHud.cs
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Updates the main HUD texts when time or stats change.
+/// 
+/// Why this is better:
+/// - SRP: this class only refreshes HUD labels.
+/// - DRY: one Refresh method formats all visible values.
+/// - YAGNI: keeps formatting local rather than introducing extra format services.
+/// </summary>
 public class UIHud : MonoBehaviour
 {
     [Header("Text Fields")]
-    public TMP_Text moneyText;
-    public TMP_Text energyText;
-    public TMP_Text stressText;
-    public TMP_Text hungerText;
-    public TMP_Text hygieneText;
-    public TMP_Text gradesText;
-    public TMP_Text dayTimeText;
+    [SerializeField] private TMP_Text moneyText;
+    [SerializeField] private TMP_Text energyText;
+    [SerializeField] private TMP_Text stressText;
+    [SerializeField] private TMP_Text hungerText;
+    [SerializeField] private TMP_Text hygieneText;
+    [SerializeField] private TMP_Text gradesText;
+    [SerializeField] private TMP_Text dayTimeText;
 
     [Header("Prompt")]
-    public TMP_Text promptText;
+    [SerializeField] private TMP_Text promptText;
 
     [SerializeField] private GameState state;
     [SerializeField] private TimeSystem timeSystem;
 
     private void Awake()
     {
-        if (!state) state = FindObjectOfType<GameState>();
-        if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
+        if (state == null) state = FindObjectOfType<GameState>();
+        if (timeSystem == null) timeSystem = FindObjectOfType<TimeSystem>();
+    }
 
-        state.OnStatsChanged += Refresh;
-        timeSystem.OnTimeChanged += Refresh;
+    private void OnEnable()
+    {
+        if (state != null)
+        {
+            state.OnStatsChanged += Refresh;
+        }
+
+        if (timeSystem != null)
+        {
+            timeSystem.OnTimeChanged += Refresh;
+        }
 
         Refresh();
     }
 
-    public void SetPrompt(string msg)
+    private void OnDisable()
     {
-        if (promptText) promptText.text = msg;
+        if (state != null)
+        {
+            state.OnStatsChanged -= Refresh;
+        }
+
+        if (timeSystem != null)
+        {
+            timeSystem.OnTimeChanged -= Refresh;
+        }
     }
 
-private void Refresh()
-{
-    if (moneyText) moneyText.text = $"£{state.money}";
-    if (energyText) energyText.text = $"{state.energy}";
-    if (stressText) stressText.text = $"{state.stress}";
-    if (hungerText) hungerText.text = $"{state.hunger}";
-    if (hygieneText) hygieneText.text = $"{state.hygiene}";
-    if (gradesText) gradesText.text = $"{state.grades}";
+    public void SetPrompt(string msg)
+    {
+        if (promptText != null)
+        {
+            promptText.text = msg;
+        }
+    }
 
-    if (dayTimeText) dayTimeText.text = $"{timeSystem.day} - {timeSystem.timeBlock}";
-}
+    private void Refresh()
+    {
+        if (state == null || timeSystem == null) return;
+
+        if (moneyText != null) moneyText.text = $"£{state.GetMoney()}";
+        if (energyText != null) energyText.text = $"{state.GetEnergy()}";
+        if (stressText != null) stressText.text = $"{state.GetStress()}";
+        if (hungerText != null) hungerText.text = $"{state.GetHunger()}";
+        if (hygieneText != null) hygieneText.text = $"{state.GetHygiene()}";
+        if (gradesText != null) gradesText.text = $"{state.GetGrades()}";
+        if (dayTimeText != null) dayTimeText.text = $"{timeSystem.day} - {timeSystem.timeBlock}";
+    }
 }
