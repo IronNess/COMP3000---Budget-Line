@@ -2,16 +2,6 @@ using UnityEngine;
 
 /// <summary>
 /// Triggers context-sensitive events based on player state and recent progress.
-/// 
-/// Examples:
-/// - low hygiene can lead to dentist events
-/// - heavy study load can lead to broken laptop events
-/// - low money can increase equipment/fine-related events
-/// 
-/// Why this is better:
-/// - SRP: only handles condition-based event triggering.
-/// - DRY: event choice and chance logic are split into helpers.
-/// - YAGNI: still uses simple threshold rules rather than a large event-rule system.
 /// </summary>
 public class ConditionedEventTrigger : MonoBehaviour
 {
@@ -43,28 +33,21 @@ public class ConditionedEventTrigger : MonoBehaviour
     [SerializeField] private GoalSystem goals;
     [SerializeField] private EventUI eventUI;
 
-    private WeekDay lastDay;
-
     private void Awake()
     {
         ResolveReferences();
-
-        if (timeSystem != null)
-        {
-            lastDay = timeSystem.day;
-        }
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (timeSystem == null) return;
+        if (timeSystem != null)
+            timeSystem.OnNewCalendarDay += OnNewCalendarDay;
+    }
 
-        if (timeSystem.day != lastDay)
-        {
-            lastDay = timeSystem.day;
-            daysSinceLast++;
-            TryTrigger();
-        }
+    private void OnDisable()
+    {
+        if (timeSystem != null)
+            timeSystem.OnNewCalendarDay -= OnNewCalendarDay;
     }
 
     private void ResolveReferences()
@@ -73,6 +56,12 @@ public class ConditionedEventTrigger : MonoBehaviour
         if (timeSystem == null) timeSystem = FindObjectOfType<TimeSystem>();
         if (goals == null) goals = FindObjectOfType<GoalSystem>();
         if (eventUI == null) eventUI = FindObjectOfType<EventUI>();
+    }
+
+    private void OnNewCalendarDay()
+    {
+        daysSinceLast++;
+        TryTrigger();
     }
 
     private void TryTrigger()

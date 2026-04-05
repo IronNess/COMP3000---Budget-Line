@@ -1,51 +1,49 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
+/// <summary>
+/// Loads minigame scenes. Optionally shows/hides a <see cref="menuPanel"/> overlay.
+/// Keep your always-visible Room button <b>outside</b> <see cref="menuPanel"/> so it is not hidden on play.
+/// </summary>
 public class MiniGameMenuUI : MonoBehaviour
 {
-    [SerializeField] private GameObject panel;
+    [Header("Optional overlay (hidden until Open)")]
+    [Tooltip("Assign only the popup/panel that lists minigames — not the GameObject with the always-visible button.")]
+    [FormerlySerializedAs("panel")]
+    [SerializeField] private GameObject menuPanel;
 
     private void Awake()
     {
-        if (panel == null)
-            panel = gameObject;
-
-        panel.SetActive(false);
+        if (menuPanel != null)
+            menuPanel.SetActive(false);
     }
 
     public void Open()
     {
-        panel.SetActive(true);
+        if (menuPanel != null)
+            menuPanel.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void Close()
     {
-        panel.SetActive(false);
+        if (menuPanel != null)
+            menuPanel.SetActive(false);
         Time.timeScale = 1f;
     }
 
-    public void OpenCleaningGame()
+    private static void LoadMiniGameScene(string sceneName)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MiniGame_Cleaning");
+        SceneManager.LoadScene(sceneName);
     }
 
-    public void OpenMissingWordsGame()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MiniGame_MissingWords");
-    }
+    public void OpenCleaningGame() => LoadMiniGameScene("MiniGame_Cleaning");
 
-    public void OpenSandwichGame()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MiniGame_Sandwich");
-    }
+    public void OpenMissingWordsGame() => LoadMiniGameScene("MiniGame_MissingWords");
 
-    public void OpenEnergyBarGame()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MiniGame_EnergyBar");
-    }
+    public void OpenSandwichGame() => LoadMiniGameScene("MiniGame_Sandwich");
+
+    public void OpenEnergyBarGame() => LoadMiniGameScene("MiniGame_EnergyBar");
 }

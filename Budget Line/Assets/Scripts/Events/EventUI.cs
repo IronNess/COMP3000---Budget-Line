@@ -50,41 +50,46 @@ public class EventUI : MonoBehaviour
         }
     }
 
-   private void Choose(int index)
-{
-    var c = current.choices[index];
-
-    if (current.title == "Library Fine" && c.label == "Contest")
+    private void Choose(int index)
     {
-        Show(libraryContestReason);
-        return;
+        var c = current.choices[index];
+
+        if (c.nextEventOverride != null)
+        {
+            Show(c.nextEventOverride);
+            return;
+        }
+
+        if (current.title == "Library Fine" && c.label == "Contest" && libraryContestReason != null)
+        {
+            Show(libraryContestReason);
+            return;
+        }
+
+        state.AddMoney(c.moneyDelta);
+        state.AddEnergy(c.energyDelta);
+        state.AddStress(c.stressDelta);
+        state.AddHunger(c.hungerDelta);
+        state.AddHygiene(c.hygieneDelta);
+        state.AddGrades(c.gradesDelta);
+
+        if (c.timeBlocksCost > 0)
+            timeSystem.AdvanceTime(c.timeBlocksCost);
+
+        panel.SetActive(false);
     }
-
-    state.AddMoney(c.moneyDelta);
-    state.AddEnergy(c.energyDelta);
-    state.AddStress(c.stressDelta);
-    state.AddHunger(c.hungerDelta);
-    state.AddHygiene(c.hygieneDelta);
-    state.AddGrades(c.gradesDelta);
-
-    if (c.timeBlocksCost > 0)
-        timeSystem.AdvanceTime(c.timeBlocksCost);
-
-    panel.SetActive(false);
-}
 
     public void ShowCustom(string title, string message)
-{
-    panel.SetActive(true);
-
-    titleText.text = title;
-    bodyText.text = message;
-
-    // Hide choice buttons (informational popup)
-    foreach (var btn in choiceButtons)
     {
-        btn.gameObject.SetActive(false);
+        panel.SetActive(true);
+
+        titleText.text = title;
+        bodyText.text = message;
+
+        foreach (var btn in choiceButtons)
+        {
+            btn.gameObject.SetActive(false);
+        }
     }
 }
 
-}

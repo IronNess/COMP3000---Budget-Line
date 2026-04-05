@@ -2,15 +2,8 @@ using UnityEngine;
 
 /// <summary>
 /// Handles recurring student finance logic such as:
-/// - initial loan payment
-/// - monthly loan payment
-/// - rent countdown
-/// - rent payment / missed rent
-/// 
-/// Why this is better:
-/// - SRP: finance and rent timing are grouped here only.
-/// - DRY: shared helper methods avoid repeated loan/rent update logic.
-/// - YAGNI: no unnecessary banking/account system is introduced.
+/// initial loan payment, monthly loan payment, rent countdown, rent payment / missed rent.
+/// Day counting is delegated to <see cref="TimeSystem"/> to avoid duplicate state.
 /// </summary>
 public class StudentFinanceSystem : MonoBehaviour
 {
@@ -22,18 +15,18 @@ public class StudentFinanceSystem : MonoBehaviour
     [SerializeField] private int daysPerMonth = 28;
 
     [Header("Current Cycle")]
-    [SerializeField] private int totalDaysPassed = 0;
-    [SerializeField] private int daysUntilRentDue = 4; // Monday start -> Friday due
+    [SerializeField] private int daysUntilRentDue = 4;
 
     [Header("References")]
     [SerializeField] private GameState state;
+    [SerializeField] private TimeSystem timeSystem;
 
     private void Awake()
     {
         if (state == null)
-        {
             state = FindObjectOfType<GameState>();
-        }
+        if (timeSystem == null)
+            timeSystem = FindObjectOfType<TimeSystem>();
 
         GiveInitialLoan();
     }
@@ -51,7 +44,6 @@ public class StudentFinanceSystem : MonoBehaviour
     /// </summary>
     public void OnNewDay()
     {
-        totalDaysPassed++;
         UpdateRentCountdown();
         TryGiveMonthlyLoan();
     }
@@ -61,16 +53,15 @@ public class StudentFinanceSystem : MonoBehaviour
         daysUntilRentDue--;
 
         if (daysUntilRentDue < 0)
-        {
             daysUntilRentDue = daysPerMonth - 1;
-        }
     }
 
     private void TryGiveMonthlyLoan()
     {
-        if (state == null) return;
+        if (state == null || timeSystem == null) return;
 
-        if (totalDaysPassed > 0 && totalDaysPassed % daysPerMonth == 0)
+        int daysPassed = timeSystem.totalDaysPassed;
+        if (daysPassed > 0 && daysPassed % daysPerMonth == 0)
         {
             state.AddMoney(monthlyLoanIncome);
             Debug.Log($"New monthly student loan received: +£{monthlyLoanIncome}");
@@ -82,10 +73,10 @@ public class StudentFinanceSystem : MonoBehaviour
         return daysUntilRentDue;
     }
 
-    public bool IsRentDueToday(TimeSystem timeSystem)
+    public bool IsRentDueToday(TimeSystem ts)
     {
-        return timeSystem != null &&
-               timeSystem.day == WeekDay.Fri &&
+        return ts != null &&
+               ts.day == WeekDay.Fri &&
                daysUntilRentDue == 0;
     }
 
@@ -99,6 +90,7 @@ public class StudentFinanceSystem : MonoBehaviour
         if (state == null) return;
 
         state.AddMoney(-monthlyRent);
+        state.rentMissed = false;
         Debug.Log($"Rent paid: -£{monthlyRent}");
     }
 
@@ -106,6 +98,7 @@ public class StudentFinanceSystem : MonoBehaviour
     {
         if (state == null) return;
 
+        state.rentMissed = true;
         state.AddStress(+40);
         Debug.Log("Rent not paid. Stress +40");
     }

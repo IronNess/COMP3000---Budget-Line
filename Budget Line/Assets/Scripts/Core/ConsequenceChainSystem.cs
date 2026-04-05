@@ -3,11 +3,6 @@ using UnityEngine;
 /// <summary>
 /// Handles chained follow-up consequences that emerge from ongoing player conditions,
 /// such as rent trouble, burnout risk, hunger problems, and hygiene problems.
-/// 
-/// Why this is better:
-/// - SRP: only consequence-chain logic lives here.
-/// - DRY: daily checks route through one method and helper methods.
-/// - YAGNI: avoids building a full rule engine for a small set of consequence chains.
 /// </summary>
 public class ConsequenceChainSystem : MonoBehaviour
 {
@@ -16,28 +11,21 @@ public class ConsequenceChainSystem : MonoBehaviour
     [SerializeField] private TimeSystem timeSystem;
     [SerializeField] private UniversalPopupUI popupUI;
 
-    private WeekDay lastDayChecked;
-
     private void Awake()
     {
         ResolveReferences();
-
-        if (timeSystem != null)
-        {
-            lastDayChecked = timeSystem.day;
-        }
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (state == null || timeSystem == null || popupUI == null)
-            return;
+        if (timeSystem != null)
+            timeSystem.OnNewCalendarDay += OnNewCalendarDay;
+    }
 
-        if (timeSystem.day != lastDayChecked)
-        {
-            lastDayChecked = timeSystem.day;
-            CheckDailyChains();
-        }
+    private void OnDisable()
+    {
+        if (timeSystem != null)
+            timeSystem.OnNewCalendarDay -= OnNewCalendarDay;
     }
 
     private void ResolveReferences()
@@ -45,6 +33,14 @@ public class ConsequenceChainSystem : MonoBehaviour
         if (state == null) state = FindObjectOfType<GameState>();
         if (timeSystem == null) timeSystem = FindObjectOfType<TimeSystem>();
         if (popupUI == null) popupUI = FindObjectOfType<UniversalPopupUI>();
+    }
+
+    private void OnNewCalendarDay()
+    {
+        if (state == null || popupUI == null)
+            return;
+
+        CheckDailyChains();
     }
 
     /// <summary>

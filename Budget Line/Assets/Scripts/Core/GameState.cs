@@ -4,11 +4,11 @@ using System;
 public class GameState : MonoBehaviour
 {
     [Header("Core Stats")]
-    public int money = 0; // Starting money is 0 before student loan added
-    public int energy = 70;   // 0..100
-    public int stress = 20;   // 0..100
-    public int hunger = 70;   // 0..100
-    public int hygiene = 70;  // 0..100
+    public int money = 0;
+    public int energy = 70;
+    public int stress = 20;
+    public int hunger = 70;
+    public int hygiene = 70;
     public int grades = 50;
 
     [Header("Debt / Interest")]
@@ -16,57 +16,25 @@ public class GameState : MonoBehaviour
 
     [Header("Progression Buffs")]
     [Tooltip("Higher = studying costs less energy.")]
-    public float studyEfficiency = 1f; // 1..1.5
+    public float studyEfficiency = 1f;
 
     [Header("Event Flags")]
-public bool rentMissed = false;
-public bool landlordWarningShown = false;
-public bool evictionRiskShown = false;
-public bool burnoutRisk = false;
-    
+    public bool rentMissed = false;
+    public bool landlordWarningShown = false;
+    public bool evictionRiskShown = false;
+    public bool burnoutRisk = false;
 
     [Tooltip("Lower = work/uni causes less stress.")]
-    public float resilience = 1f;      // 0.7..1
+    public float resilience = 1f;
 
     public event Action OnStatsChanged;
 
-    // -----------------------------
-    // GETTERS (for UI scripts)
-    // -----------------------------
-
-    public int GetMoney()
-    {
-        return money;
-    }
-
-    public int GetEnergy()
-    {
-        return energy;
-    }
-
-    public int GetStress()
-    {
-        return stress;
-    }
-
-    public int GetHunger()
-    {
-        return hunger;
-    }
-
-    public int GetHygiene()
-    {
-        return hygiene;
-    }
-
-    public int GetGrades()
-    {
-        return grades;
-    }
-
-    // -----------------------------
-    // STAT MODIFIERS
-    // -----------------------------
+    public int GetMoney() => money;
+    public int GetEnergy() => energy;
+    public int GetStress() => stress;
+    public int GetHunger() => hunger;
+    public int GetHygiene() => hygiene;
+    public int GetGrades() => grades;
 
     public void AddMoney(int amount)
     {
@@ -99,84 +67,95 @@ public bool burnoutRisk = false;
     }
 
     public void AddGrades(int amount)
-{
-    grades = Mathf.Clamp(grades + amount, 0, 100);
-    OnStatsChanged?.Invoke();
-}
+    {
+        grades = Mathf.Clamp(grades + amount, 0, 100);
+        OnStatsChanged?.Invoke();
+    }
 
     public void ApplyTimeBlockDecay()
-{
-    AddEnergy(-3);
-    AddHunger(-2);
-    AddHygiene(-1);
-}
+    {
+        AddEnergy(-3);
+        AddHunger(-2);
+        AddHygiene(-1);
+    }
 
     /// <summary>
     /// Runs once per day (when time wraps Night -> Morning)
     /// </summary>
     public void ApplyDailyConsequences()
-{
-    // Passive decay
-    AddHunger(-10);
-    AddHygiene(-8);
-    AddStress(+5);
+    {
+        ApplyPassiveDailyDecay();
+        ApplyDebtInterestIfOverdrawn();
+        ApplyHungerCrash();
+        ApplyHygieneCrash();
+        ApplyBurnoutCrash();
+        ApplyLowHungerEnergyPenalty();
+        ApplyExhaustionOrStressGradePenalty();
+        UpdateBurnoutRiskFlag();
+    }
 
-    // Grades slowly decline over time
-    AddGrades(-1);
+    private void ApplyPassiveDailyDecay()
+    {
+        AddHunger(-10);
+        AddHygiene(-8);
+        AddStress(+5);
+        AddGrades(-1);
+    }
 
-        // Debt snowball
+    private void ApplyDebtInterestIfOverdrawn()
+    {
         if (money < 0)
         {
             money -= debtInterestPerDay;
             OnStatsChanged?.Invoke();
         }
+    }
 
-        // Hunger crash
+    private void ApplyHungerCrash()
+    {
         if (hunger <= 0)
         {
             AddEnergy(-20);
             AddStress(+15);
         }
+    }
 
-        // Hygiene crash
+    private void ApplyHygieneCrash()
+    {
         if (hygiene <= 0)
-        {
             AddStress(+10);
-        }
+    }
 
-        // Burnout
+    private void ApplyBurnoutCrash()
+    {
         if (stress >= 100)
         {
             energy = Mathf.Clamp(energy - 15, 0, 100);
             stress = 70;
             OnStatsChanged?.Invoke();
         }
+    }
 
-        // Low hunger penalty
+    private void ApplyLowHungerEnergyPenalty()
+    {
         if (hunger < 20)
         {
             energy = Mathf.Clamp(energy - 5, 0, 100);
             OnStatsChanged?.Invoke();
         }
-
-        // Grades slowly decline if exhausted or overly stressed
-if (energy <= 10 || stress >= 80)
-{
-    AddGrades(-1);
-}
-
-// Burnout risk flag
-if (stress >= 85)
-{
-    burnoutRisk = true;
-}
     }
 
-    
+    private void ApplyExhaustionOrStressGradePenalty()
+    {
+        if (energy <= 10 || stress >= 80)
+            AddGrades(-1);
+    }
 
-    // -----------------------------
-    // PROGRESSION
-    // -----------------------------
+    private void UpdateBurnoutRiskFlag()
+    {
+        if (stress >= 85)
+            burnoutRisk = true;
+    }
 
     public void ImproveStudyEfficiency()
     {
@@ -189,10 +168,6 @@ if (stress >= 85)
         resilience = Mathf.Clamp(resilience - 0.03f, 0.7f, 1f);
         OnStatsChanged?.Invoke();
     }
-
-    // -----------------------------
-    // WORLD FLAGS
-    // -----------------------------
 
     public bool laptopBroken = false;
 }

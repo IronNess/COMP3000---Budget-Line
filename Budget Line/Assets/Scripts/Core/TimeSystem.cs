@@ -23,6 +23,11 @@ public class TimeSystem : MonoBehaviour
 
     public event Action OnTimeChanged;
 
+    /// <summary>
+    /// Fired once when the calendar day advances, after the daily tick (stats, goals, events, finance).
+    /// </summary>
+    public event Action OnNewCalendarDay;
+
     [Header("References")]
     [SerializeField] private GameState state;
     [SerializeField] private GoalSystem goals;
@@ -82,6 +87,7 @@ public class TimeSystem : MonoBehaviour
         Debug.Log("New day reached. Total days passed: " + totalDaysPassed);
 
         RunDailySystems();
+        OnNewCalendarDay?.Invoke();
     }
 
     private void RunDailySystems()

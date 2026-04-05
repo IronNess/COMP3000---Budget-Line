@@ -2,15 +2,10 @@ using UnityEngine;
 
 /// <summary>
 /// Shows time-based daily prompts, especially rent reminders and rent-due prompts.
-/// 
+///
 /// Caller:
-/// - Unity lifecycle (Start / Update)
-/// - Uses TimeSystem and StudentFinanceSystem state
-/// 
-/// Why this is better:
-/// - SRP: only handles daily reminder UI.
-/// - DRY: reminder display logic is split into small focused methods.
-/// - YAGNI: no overbuilt scheduling framework is introduced.
+/// - <see cref="TimeSystem.OnNewCalendarDay"/> for morning prompts after each new day
+/// - Unity <see cref="Start"/> for the initial Monday-morning prompt when the scene loads
 /// </summary>
 public class DailyScheduleSystem : MonoBehaviour
 {
@@ -19,36 +14,32 @@ public class DailyScheduleSystem : MonoBehaviour
     [SerializeField] private UniversalPopupUI eventUI;
     [SerializeField] private StudentFinanceSystem financeSystem;
 
-    private WeekDay lastDayShown;
-
     private void Awake()
     {
         ResolveReferences();
+    }
 
+    private void OnEnable()
+    {
         if (timeSystem != null)
-        {
-            lastDayShown = timeSystem.day;
-        }
+            timeSystem.OnNewCalendarDay += OnNewCalendarDay;
+    }
+
+    private void OnDisable()
+    {
+        if (timeSystem != null)
+            timeSystem.OnNewCalendarDay -= OnNewCalendarDay;
     }
 
     private void Start()
     {
-        // Show the first reminder immediately if the game begins on Monday morning.
         if (IsCurrentMorning(WeekDay.Mon))
-        {
             ShowMorningPrompt();
-        }
     }
 
-    private void Update()
+    private void OnNewCalendarDay()
     {
-        if (timeSystem == null || financeSystem == null) return;
-
-        if (IsNewMorning())
-        {
-            lastDayShown = timeSystem.day;
-            ShowMorningPrompt();
-        }
+        ShowMorningPrompt();
     }
 
     private void ResolveReferences()
@@ -65,12 +56,6 @@ public class DailyScheduleSystem : MonoBehaviour
                timeSystem.timeBlock == TimeBlock.Morning;
     }
 
-    private bool IsNewMorning()
-    {
-        return timeSystem.day != lastDayShown &&
-               timeSystem.timeBlock == TimeBlock.Morning;
-    }
-
     private void ShowMorningPrompt()
     {
         if (financeSystem == null || eventUI == null || timeSystem == null) return;
@@ -84,9 +69,7 @@ public class DailyScheduleSystem : MonoBehaviour
         }
 
         if (daysLeft == 4 || daysLeft == 2 || daysLeft == 1)
-        {
             ShowRentReminder(daysLeft);
-        }
     }
 
     private void ShowRentReminder(int daysLeft)
