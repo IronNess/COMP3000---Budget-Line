@@ -1,26 +1,35 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CleaningGameController : MonoBehaviour
 {
-    [SerializeField] private int totalItems = 6;
+    [Header("Game Rules")]
     [SerializeField] private float timeLimit = 20f;
 
+    [Header("Scene Flow")]
+    [SerializeField] private string returnSceneName = "RoomScene";
+
+    [Header("UI")]
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text progressText;
-    [SerializeField] private TMP_Text resultText;
 
-    private int cleanedItems = 0;
+    [Header("Optional Reward Hook")]
+    [SerializeField] private GameState gameState;
+    [SerializeField] private int hygieneRewardAmount = 1000; 
+    // Assumes AddHygiene clamps to 100 in GameState.
+
+    private int totalItems;
+    private int cleanedItems;
     private float timer;
-    private bool gameEnded = false;
+    private bool gameEnded;
+
+    public bool IsGameEnded => gameEnded;
 
     private void Start()
     {
         timer = timeLimit;
         UpdateUI();
-
-        if (resultText != null)
-            resultText.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -38,6 +47,12 @@ public class CleaningGameController : MonoBehaviour
         }
     }
 
+    public void RegisterItem()
+    {
+        totalItems++;
+        UpdateUI();
+    }
+
     public void ItemCleaned()
     {
         if (gameEnded) return;
@@ -45,29 +60,45 @@ public class CleaningGameController : MonoBehaviour
         cleanedItems++;
         UpdateUI();
 
-        if (cleanedItems >= totalItems)
+        if (cleanedItems >= totalItems && totalItems > 0)
         {
             EndGame(true);
         }
     }
 
+    public void ExitCleaningGame()
+    {
+        if (gameEnded) return;
+
+        gameEnded = true;
+        LoadReturnScene();
+    }
+
     private void UpdateUI()
     {
         if (timerText != null)
-            timerText.text = "Time: " + timer.ToString("F1");
+            timerText.text = $"Time: {timer:F1}";
 
         if (progressText != null)
-            progressText.text = "Cleaned: " + cleanedItems + "/" + totalItems;
+            progressText.text = $"Cleaned: {cleanedItems}/{totalItems}";
     }
 
     private void EndGame(bool won)
     {
+        if (gameEnded) return;
+
         gameEnded = true;
 
-        if (resultText != null)
+        if (won && gameState != null)
         {
-            resultText.gameObject.SetActive(true);
-            resultText.text = won ? "Room Clean!" : "Time Up!";
+            gameState.AddHygiene(hygieneRewardAmount);
         }
+
+        LoadReturnScene();
+    }
+
+    private void LoadReturnScene()
+    {
+        SceneManager.LoadScene(returnSceneName);
     }
 }
