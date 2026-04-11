@@ -12,7 +12,8 @@ public class ConditionedEventTrigger : MonoBehaviour
     [SerializeField] private EventData academicEquipment;
 
     [Header("Trigger Timing")]
-    [SerializeField] private int minDaysBetweenEvents = 2;
+    [Tooltip("Minimum full days between conditioned events (laptop, fines, etc.). Lower = more frequent.")]
+    [SerializeField] private int minDaysBetweenEvents = 1;
     private int daysSinceLast = 999;
 
     [Header("Condition Thresholds")]
@@ -21,11 +22,13 @@ public class ConditionedEventTrigger : MonoBehaviour
     [SerializeField] private int lowMoneyThreshold = 20;
 
     [Header("Base Chances")]
-    [Range(0f, 1f)] [SerializeField] private float baseChancePerDay = 0.05f;
-    [Range(0f, 1f)] [SerializeField] private float hygieneBonusChance = 0.12f;
-    [Range(0f, 1f)] [SerializeField] private float studyBonusChance = 0.10f;
-    [Range(0f, 1f)] [SerializeField] private float lowMoneyBonusChance = 0.08f;
-    [Range(0f, 1f)] [SerializeField] private float missedDeadlineBonusChance = 0.10f;
+    [Tooltip("Daily roll before situational bonuses (hygiene, money, etc.).")]
+    [Range(0f, 1f)] [SerializeField] private float baseChancePerDay = 0.18f;
+    [Range(0f, 1f)] [SerializeField] private float hygieneBonusChance = 0.14f;
+    [Range(0f, 1f)] [SerializeField] private float studyBonusChance = 0.12f;
+    [Tooltip("Extra chance when money is low — pushes money-related event picks.")]
+    [Range(0f, 1f)] [SerializeField] private float lowMoneyBonusChance = 0.16f;
+    [Range(0f, 1f)] [SerializeField] private float missedDeadlineBonusChance = 0.12f;
 
     [Header("References")]
     [SerializeField] private GameState state;
@@ -94,7 +97,7 @@ public class ConditionedEventTrigger : MonoBehaviour
         if (IsLowMoney()) chance += lowMoneyBonusChance;
         if (goals.MissedDeadlineThisWeek) chance += missedDeadlineBonusChance;
 
-        return chance;
+        return Mathf.Clamp01(chance);
     }
 
     private EventData ChooseEvent()

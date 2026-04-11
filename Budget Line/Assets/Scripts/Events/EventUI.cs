@@ -16,18 +16,35 @@ public class EventUI : MonoBehaviour
     [SerializeField] private TimeSystem timeSystem;
     [SerializeField] private EventData libraryContestReason;
 
+    [Header("Audio (optional)")]
+    [Tooltip("Plays when this popup opens. No Audio Source needed — add one only if you use an Audio Mixer group.")]
+    [SerializeField] private AudioClip popupOpenClip;
+    [SerializeField] private AudioSource audioSource;
+
     private void Awake()
     {
         if (!state) state = FindObjectOfType<GameState>();
         if (!timeSystem) timeSystem = FindObjectOfType<TimeSystem>();
+        ResolveAudioSource();
 
         if (panel) panel.SetActive(false);
+    }
+
+    private void ResolveAudioSource()
+    {
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = GetComponentInChildren<AudioSource>(true);
     }
 
     public void Show(EventData data)
     {
         current = data;
+        ResolveAudioSource();
+
         panel.SetActive(true);
+        PopupOpenSound.TryPlay(popupOpenClip, audioSource);
 
         titleText.text = data.title;
         bodyText.text = data.description;
@@ -81,7 +98,10 @@ public class EventUI : MonoBehaviour
 
     public void ShowCustom(string title, string message)
     {
+        ResolveAudioSource();
+
         panel.SetActive(true);
+        PopupOpenSound.TryPlay(popupOpenClip, audioSource);
 
         titleText.text = title;
         bodyText.text = message;

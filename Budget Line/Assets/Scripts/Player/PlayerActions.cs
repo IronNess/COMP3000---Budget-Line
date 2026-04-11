@@ -50,15 +50,7 @@ public class PlayerActions : MonoBehaviour
 
     public void GoToUniversity()
     {
-        ApplyStatPenaltiesBeforeAction();
-
-        int gradeGain = IsLowEnergy() ? 0 : 2;
-
-        state.AddGrades(gradeGain);
-        state.AddEnergy(-10);
-        state.AddStress(+3);
-
-        time.AdvanceTime(1);
+        DoorUniversityInteractable.PlayUniversityTripFromMenu();
     }
 
     public void WorkShort() => DoShiftWork(20, 30, 8, +2, 1);
@@ -136,7 +128,7 @@ public class PlayerActions : MonoBehaviour
     {
         ApplyStatPenaltiesBeforeAction();
 
-        int gradeGain = IsLowEnergy() ? 0 : 1;
+        int gradeGain = IsLowEnergy() ? 1 : 2;
 
         state.AddGrades(gradeGain);
         state.AddEnergy(-5);
@@ -148,7 +140,7 @@ public class PlayerActions : MonoBehaviour
     {
         ApplyStatPenaltiesBeforeAction();
 
-        int gradeGain = IsLowEnergy() ? 1 : 3;
+        int gradeGain = IsLowEnergy() ? 3 : 6;
 
         state.AddGrades(gradeGain);
         state.AddEnergy(-15);

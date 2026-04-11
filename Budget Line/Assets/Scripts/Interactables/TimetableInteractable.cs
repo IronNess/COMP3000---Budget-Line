@@ -4,7 +4,7 @@ public class TimetableInteractable : MonoBehaviour, IInteractable
 {
     public string Prompt => "Follow Timetable (+Grades, -Energy, time passes)";
 
-    public int gradesGain = 2;
+    public int gradesGain = 3;
     public int energyCost = -15;
     public int stressChange = -3;
     public int timeBlocksCost = 2;

@@ -1,12 +1,7 @@
-// GradeUtility.cs
-// Purpose:
-// A tiny shared helper used by multiple UI scripts.
-// This improves DRY because the "number -> grade letter" rule lives in one place.
+// Optional helper if you want letter bands (A/B/C/D) somewhere; HUD and grade labels use raw 0–100 scores.
 
 public static class GradeUtility
 {
-    // Caller:
-    // Any script that needs to turn a numeric grade score into A/B/C/D.
     public static string ToLetter(int score)
     {
         if (score >= 80) return "A";

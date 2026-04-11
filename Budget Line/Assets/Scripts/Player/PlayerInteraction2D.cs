@@ -19,7 +19,10 @@ public class PlayerInteraction2D : MonoBehaviour
             hud.SetPrompt($"Press E to: {current.Prompt}");
 
             if (Input.GetKeyDown(interactKey))
+            {
+                InteractAudio.PlayBeforeInteract(current);
                 current.Interact();
+            }
         }
         else
         {

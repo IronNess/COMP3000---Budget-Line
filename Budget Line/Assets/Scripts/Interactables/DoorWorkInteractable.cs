@@ -36,6 +36,24 @@ public class DoorWorkInteractable : MonoBehaviour, IInteractable
         if (eventManager == null) eventManager = FindObjectOfType<EventManager>();
     }
 
+    /// <summary>
+    /// See <see cref="DoorUniversityInteractable.PlayUniversityTripFromMenu"/>.
+    /// </summary>
+    public static void PlayWorkTripFromMenu()
+    {
+        DoorWorkInteractable door = FindFirstObjectByType<DoorWorkInteractable>(FindObjectsInactive.Include);
+        if (door != null)
+        {
+            door.Interact();
+            return;
+        }
+
+        GameObject temp = new GameObject("_RuntimeWorkTrip");
+        DoorWorkInteractable runtime = temp.AddComponent<DoorWorkInteractable>();
+        runtime.Interact();
+        Object.Destroy(temp);
+    }
+
     public void Interact()
     {
         if (state == null || timeSystem == null) return;

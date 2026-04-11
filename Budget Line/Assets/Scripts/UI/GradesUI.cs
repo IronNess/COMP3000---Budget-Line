@@ -3,10 +3,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// Updates a grade label when stats change.
-/// 
-/// - DRY: uses GradeUtility instead of repeating grade rules.
-/// - SRP: this class only updates one UI label.
+/// Updates a grade label when stats change. Shows the numeric score (0–100), same as <see cref="UIHud"/>.
 /// </summary>
 public class GradesUI : MonoBehaviour
 {
@@ -40,6 +37,6 @@ public class GradesUI : MonoBehaviour
     {
         if (label == null || state == null) return;
 
-        label.text = "Grade: " + GradeUtility.ToLetter(state.GetGrades());
+        label.text = "Grade: " + state.GetGrades();
     }
 }

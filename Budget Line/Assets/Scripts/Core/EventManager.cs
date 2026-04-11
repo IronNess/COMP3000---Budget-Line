@@ -16,8 +16,10 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     [Header("Event Chances")]
-    [Range(0f, 1f)] [SerializeField] private float dailyEventChance = 0.35f;
-    [Range(0f, 1f)] [SerializeField] private float actionEventChance = 0.25f;
+    [Tooltip("Chance each new day (from TimeSystem) that one random event from the pool appears.")]
+    [Range(0f, 1f)] [SerializeField] private float dailyEventChance = 0.55f;
+    [Tooltip("Chance after work / uni / desk study that one random event from the pool appears.")]
+    [Range(0f, 1f)] [SerializeField] private float actionEventChance = 0.42f;
 
     [Header("Event Pool")]
     [SerializeField] private List<EventData> eventPool = new List<EventData>();

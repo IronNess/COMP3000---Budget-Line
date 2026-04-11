@@ -23,8 +23,10 @@ public class TravelMenuUI : MonoBehaviour
     private void Awake()
     {
         if (panel == null) panel = gameObject;
-        if (uni == null) uni = FindObjectOfType<DoorUniversityInteractable>();
-        if (work == null) work = FindObjectOfType<DoorWorkInteractable>();
+        if (uni == null)
+            uni = FindFirstObjectByType<DoorUniversityInteractable>(FindObjectsInactive.Include);
+        if (work == null)
+            work = FindFirstObjectByType<DoorWorkInteractable>(FindObjectsInactive.Include);
 
         panel.SetActive(false);
     }
@@ -46,9 +48,9 @@ public class TravelMenuUI : MonoBehaviour
         Close();
 
         if (uni != null)
-        {
             uni.Interact();
-        }
+        else
+            DoorUniversityInteractable.PlayUniversityTripFromMenu();
     }
 
     public void ChooseWork()
@@ -56,9 +58,9 @@ public class TravelMenuUI : MonoBehaviour
         Close();
 
         if (work != null)
-        {
             work.Interact();
-        }
+        else
+            DoorWorkInteractable.PlayWorkTripFromMenu();
     }
 
     public void ChooseGym()

@@ -33,8 +33,15 @@ public class UniversalPopupUI : MonoBehaviour
     [SerializeField] private Button button3;
     [SerializeField] private TMP_Text button3Text;
 
+    [Header("Audio (optional)")]
+    [Tooltip("Plays when this popup opens. No Audio Source needed — add one only if you use an Audio Mixer group.")]
+    [SerializeField] private AudioClip popupOpenClip;
+    [SerializeField] private AudioSource audioSource;
+
     private void Awake()
     {
+        ResolveAudioSource();
+
         if (panel != null)
         {
             panel.SetActive(false);
@@ -58,7 +65,10 @@ public class UniversalPopupUI : MonoBehaviour
             return;
         }
 
+        ResolveAudioSource();
+
         panel.SetActive(true);
+        PopupOpenSound.TryPlay(popupOpenClip, audioSource);
 
         if (titleText != null) titleText.text = title;
         if (bodyText != null) bodyText.text = body;
@@ -68,6 +78,17 @@ public class UniversalPopupUI : MonoBehaviour
         SetupButton(button1, button1Text, btn1Label, btn1Action);
         SetupButton(button2, button2Text, btn2Label, btn2Action);
         SetupButton(button3, button3Text, btn3Label, btn3Action);
+    }
+
+    /// <summary>
+    /// If this object starts disabled, <see cref="Awake"/> may not run before the first <see cref="Show"/> — resolve again here.
+    /// </summary>
+    private void ResolveAudioSource()
+    {
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = GetComponentInChildren<AudioSource>(true);
     }
 
     private void ConfigureIcon(Sprite icon)

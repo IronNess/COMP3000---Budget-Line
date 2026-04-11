@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 /// EndingSystem calls ShowEndScreen(...) when the player wins or fails.
 /// 
 /// - SRP/SOLID: this class only handles end-screen presentation.
-/// - DRY: grade conversion uses GradeUtility; formatting is split into helpers.
+/// - DRY: stat lines use GameState getters; formatting is split into helpers.
 /// - YAGNI: no extra systems or abstractions that the project does not need.
 /// </summary>
 public class EndGameUI : MonoBehaviour
@@ -94,8 +94,6 @@ public class EndGameUI : MonoBehaviour
     {
         int survivalPercent = CalculateSurvivalPercent();
         string summary = BuildSummary(survivalPercent);
-        string gradeLetter = GradeUtility.ToLetter(state.GetGrades());
-
         if (titleText != null) titleText.text = title;
         if (summaryText != null) summaryText.text = summary;
         if (survivalPercentText != null) survivalPercentText.text = $"Overall Survival: {survivalPercent}%";
@@ -105,7 +103,7 @@ public class EndGameUI : MonoBehaviour
         if (hungerText != null) hungerText.text = $"Hunger: {state.GetHunger()}";
         if (hygieneText != null) hygieneText.text = $"Hygiene: {state.GetHygiene()}";
         if (stressText != null) stressText.text = $"Stress: {state.GetStress()}";
-        if (gradesText != null) gradesText.text = $"Grades: {gradeLetter}";
+        if (gradesText != null) gradesText.text = $"Grades: {state.GetGrades()}";
     }
 
     private int CalculateSurvivalPercent()

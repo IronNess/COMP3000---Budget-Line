@@ -24,6 +24,7 @@ public class ClickableInteractable : MonoBehaviour
 
         if (interactable != null)
         {
+            InteractAudio.PlayBeforeInteract(interactable);
             interactable.Interact();
         }
     }

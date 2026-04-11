@@ -102,7 +102,8 @@ public class DeskInteractable : MonoBehaviour, IInteractable
 
     private int CalculateStudyGradeGain()
     {
-        int gradeGain = 1;
+        // Base reward tuned so regular desk study meaningfully offsets daily grade decay (~1/day).
+        int gradeGain = 3;
 
         if (state.laptopBroken)
             gradeGain = 0;
@@ -110,7 +111,11 @@ public class DeskInteractable : MonoBehaviour, IInteractable
         if (state.GetHunger() < lowHungerThreshold)
             gradeGain -= 1;
 
-        return gradeGain;
+        // Slight bonus as study efficiency improves from repeat desk use.
+        if (!state.laptopBroken && state.studyEfficiency >= 1.05f)
+            gradeGain += 1;
+
+        return Mathf.Max(0, gradeGain);
     }
 
     private int CalculateStudyTimeCost()
