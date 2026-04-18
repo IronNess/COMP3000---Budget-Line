@@ -3,7 +3,12 @@ guid: 2687caf0f4a36e3439155dd57bdea362
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Avatar.001_0
+    second: {fileID: 3198199200664773670, guid: 0ed7edaa984cb4a448c4cd7b2a72fdd9, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
